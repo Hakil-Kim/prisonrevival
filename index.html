@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prison Revival</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo" data-i18n="siteTitle">Prison Revival</a>
+    <div class="lang-selector">
+      <select id="lang-select">
+        <option value="ko">한국어</option>
+        <option value="en">English</option>
+        <option value="zh">中文</option>
+        <option value="es">Español</option>
+        <option value="pt">Português</option>
+        <option value="tl">Tagalog</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- Hero Section with Background Image -->
+  <div class="hero-wrapper">
+    <div class="hero-badge">🌿 매주 업데이트되는 묵상 자료</div>
+    <h1 data-i18n="heroTitle">새로운 희망을 만나다</h1>
+    <p data-i18n="heroDesc" style="margin-bottom: 2rem;">수감된 형제자매들에게 복음을 전하고 새롭게 되는 길을 함께 걸어갑니다.</p>
+
+    <!-- Video Player -->
+    <div class="container" style="width: 100%;">
+      <div class="video-container">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/oG_jy34D42M" title="Prison Revival Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Devotional Download Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="downloadTitle">이번 달 묵상 자료</h2>
+        <p class="section-desc" data-i18n="downloadDesc">아래 버튼을 눌러 선택하신 언어로 묵상 파일을 다운로드 할 수 있습니다.</p>
+        
+        <!-- 다운로드 버튼 컨테이너 -->
+        <div id="devotional-container" class="devotional-buttons"></div>
+
+        <a href="archive.html" class="secondary-btn" data-i18n="previousDevotionals">이전 달 묵상 자료 보기</a>
+      </div>
+    </section>
+
+    <!-- YouTube & About Dark Section -->
+    <section class="section section-dark">
+      <div class="container">
+        <!-- About Us -->
+        <h2 class="section-title" data-i18n="aboutTitle">사역 소개</h2>
+        <p class="section-desc" style="max-width: 800px;" data-i18n="aboutDesc">프리즌 리바이벌은 복음을 통해 수감자들의 진정한 회복과 변화를 돕고, 사회의 건강한 일원으로 돌아올 수 있도록 돕는 사역입니다. 하나님의 사랑으로 나아갑니다.</p>
+        
+        <br><br>
+
+        <!-- YouTube Guide -->
+        <h2 class="section-title" data-i18n="youtubeTitle" style="font-size: 2rem;">묵상 유튜브 안내</h2>
+        <button id="youtube-btn" class="youtube-btn" data-i18n="youtubeLinkBtn">유튜브에서 묵상 보기</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Prison Revival. All rights reserved.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

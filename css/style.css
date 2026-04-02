@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+:root {
+  --dark-green: #112A22; /* Seed 스타일의 깊은 숲색 */
+  --dark-green-light: #1A3E33;
+  --off-white: #F9F8F3;  /* 고급스러운 크림색 */
+  --light-green-bg: #EAECE2;
+  --neon-green: #B8E986; /* 하이라이트 엑센트 */
+  --text-dark: #1E3A2F;
+  --text-light: #F9F8F3;
+  
+  --font-serif: 'Playfair Display', "Noto Sans KR", serif;
+  --font-sans: 'Inter', "Noto Sans KR", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--off-white);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark-green); /* 밝은 배경이므로 텍스트는 어둡게 */
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.lang-selector select {
+  padding: 0.4rem 1rem;
+  background-color: transparent;
+  border: 1px solid var(--dark-green);
+  color: var(--dark-green);
+  border-radius: 20px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: none;
+  font-weight: 500;
+}
+.lang-selector select option {
+  color: var(--text-dark);
+  background: var(--off-white);
+}
+
+/* Hero Section */
+.hero-wrapper {
+  position: relative;
+  min-height: 50vh;
+  background-image: linear-gradient(rgba(249, 248, 243, 0.5), rgba(249, 248, 243, 0.7)), url('../images/hero-bright.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 8.5rem 2rem 5rem;
+  color: var(--dark-green);
+}
+
+.hero-badge {
+  background-color: var(--neon-green);
+  color: var(--dark-green);
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  display: inline-block;
+  letter-spacing: 0.5px;
+}
+
+.hero-wrapper h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  max-width: 800px;
+}
+
+.hero-wrapper p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+
+/* Video Wrapper */
+.video-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Sections */
+.section {
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.section-dark {
+  background-color: var(--dark-green);
+  color: var(--text-light);
+  background-image: linear-gradient(rgba(17, 42, 34, 0.85), rgba(17, 42, 34, 0.95)), url('../images/texture.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-desc {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+  opacity: 0.8;
+}
+
+/* Grid Layouts */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Devotional Cards */
+.devotional-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.btn-box {
+  background-color: var(--dark-green);
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-box::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; left: 0; bottom: 0;
+  background: radial-gradient(circle at top right, rgba(184, 233, 134, 0.15), transparent 60%);
+  pointer-events: none;
+}
+
+.btn-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(17, 42, 34, 0.2);
+  border-color: rgba(184, 233, 134, 0.3);
+}
+
+.download-btn {
+  background: transparent;
+  color: var(--text-light);
+  border: none;
+  font-size: 1.2rem;
+  font-family: var(--font-serif);
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+}
+
+.download-btn::after {
+  content: "↓ Download";
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  color: var(--neon-green);
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+/* Architecture / UI Buttons */
+.secondary-btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: transparent;
+  border: 1px solid var(--dark-green);
+  color: var(--dark-green);
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+.secondary-btn:hover {
+  background-color: var(--dark-green);
+  color: var(--text-light);
+}
+
+.section-dark .secondary-btn {
+  border-color: var(--text-light);
+  color: var(--text-light);
+}
+
+.section-dark .secondary-btn:hover {
+  background-color: var(--text-light);
+  color: var(--dark-green);
+}
+
+.youtube-btn {
+  display: inline-block;
+  background-color: var(--neon-green);
+  color: var(--dark-green);
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.youtube-btn:hover {
+  background-color: #a4d176;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: var(--dark-green);
+  color: rgba(255,255,255,0.5);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Header variant for archive */
+body.archive header {
+  position: relative;
+  background-color: var(--off-white);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+body.archive {
+  background-color: var(--off-white);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-wrapper h1 { font-size: 2.8rem; }
+  .section-title { font-size: 2rem; }
+  header { padding: 1rem; }
+  .video-container { margin-top: -10vh; margin-bottom: 2rem; }
+}
