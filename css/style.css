@@ -80,6 +80,10 @@ header {
   opacity: 0.8;
 }
 
+.menu-toggle {
+  display: none;
+}
+
 .nav-menu a:hover {
   color: var(--dark-green);
   opacity: 1;
@@ -853,8 +857,45 @@ footer {
     padding: 1rem 2rem;
   }
 
+  .menu-toggle {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--dark-green);
+  }
+
   .nav-menu {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    gap: 0;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    width: 100%;
+  }
+
+  .nav-menu li:last-child {
+    border-bottom: none;
+  }
+
+  .lang-selector {
+    margin-left: auto;
+    margin-right: 1.5rem;
   }
 
   .hero-wrapper h1 {

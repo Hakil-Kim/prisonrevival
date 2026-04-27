@@ -29,10 +29,24 @@ document.addEventListener('DOMContentLoaded', () => {
           top: offsetPosition,
           behavior: "smooth"
         });
+
+        // 모바일 메뉴가 열려있다면 클릭 후 닫기
+        const navMenu = document.querySelector('.nav-menu');
+        if (navMenu && navMenu.classList.contains('active')) {
+          navMenu.classList.remove('active');
+        }
       }
     });
   });
 });
+
+// 모바일 메뉴 토글 함수
+function toggleMenu() {
+  const navMenu = document.querySelector('.nav-menu');
+  if (navMenu) {
+    navMenu.classList.toggle('active');
+  }
+}
 
 function initLanguage() {
   const savedLang = localStorage.getItem('prisonRevivalLang');
