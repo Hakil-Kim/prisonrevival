@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prison Revival</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <header>
-    <a href="index.html" class="logo" data-i18n="siteTitle">Prison Revival</a>
+    <a href="index.html" class="logo">
+      <img src="images/favicon.png" alt="PR Logo" class="header-logo-icon">
+      <span data-i18n="siteTitle">Prison Revival</span>
+    </a>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="intro.html" data-i18n="navIntro">소개</a></li>
+        <li><a href="#downloads" data-i18n="navDownload">묵상자료</a></li>
+        <li><a href="#angeltree" data-i18n="navAngelTree">엔젤트리</a></li>
+        <li><a href="index.html#programs" data-i18n="navPrograms">프로그램</a></li>
+        <li><a href="youtube.html" data-i18n="navYoutube">유튜브</a></li>
+        <li><a href="index.html#notice" data-i18n="navNotice">공지</a></li>
+      </ul>
+    </nav>
     <div class="lang-selector">
       <select id="lang-select">
         <option value="ko">한국어</option>
@@ -22,59 +38,164 @@
     </div>
   </header>
 
-  <!-- Hero Section with Background Image -->
-  <div class="hero-wrapper">
-    <div class="hero-badge">🌿 매주 업데이트되는 묵상 자료</div>
-    <h1 data-i18n="heroTitle">새로운 희망을 만나다</h1>
-    <p data-i18n="heroDesc" style="margin-bottom: 2rem;">수감된 형제자매들에게 복음을 전하고 새롭게 되는 길을 함께 걸어갑니다.</p>
+  <!-- Hero Section -->
+  <div class="hero-wrapper" id="home">
+
+    <h1 data-i18n="heroTitle" class="fade-in">새로운 희망을 만나다</h1>
+    <p data-i18n="heroDesc" class="fade-in delay-1">수감된 형제자매들에게 복음을 전하고 새롭게 되는 길을 함께 걸어갑니다.</p>
 
     <!-- Video Player -->
-    <div class="container" style="width: 100%;">
-      <div class="video-container">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/oG_jy34D42M" title="Prison Revival Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+    <div class="video-container fade-in delay-2">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/oG_jy34D42M?autoplay=1&mute=1" title="Prison Revival Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
       </div>
+    </div>
+    
+    <!-- Volunteer Apply Button -->
+    <div class="hero-action fade-in delay-3">
+      <a href="http://pf.kakao.com/_ptYAG/chat" target="_blank" class="volunteer-btn" data-i18n="volunteerApply">프리즌 리바이벌 발렌티어 지원</a>
     </div>
   </div>
 
   <main>
+    <!-- Introduction Section -->
+    <section class="section" id="intro">
+      <div class="container">
+        <h2 class="section-title" data-i18n="introTitle">사역 및 선교사 소개</h2>
+        <div class="intro-grid">
+          <div class="missionary-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=800"
+              alt="Missionary" class="missionary-img">
+          </div>
+          <div class="intro-content">
+            <h3 data-i18n="missionaryName">김은미 선교사</h3>
+            <p data-i18n="missionaryDesc">프리즌 리바이벌은 담장 너머의 잃어버린 영혼들을 향한 하나님의 마음을 전합니다. 수감자들의 진정한 회복과 변화를 돕고, 사회의 건강한
+              일원으로 돌아올 수 있도록 돕는 사역입니다.</p>
+          </div>
+        </div>
+
+
+        <h3 data-i18n="partnersTitle" style="margin-top: 8rem;">협력 단체 및 교회</h3>
+        <div class="partners-grid">
+          <div class="partner-item">Partner Logo</div>
+          <div class="partner-item">Partner Logo</div>
+          <div class="partner-item">Partner Logo</div>
+          <div class="partner-item">Partner Logo</div>
+        </div>
+      </div>
+    </section>
+
     <!-- Devotional Download Section -->
-    <section class="section">
+    <section class="section section-dark" id="downloads">
       <div class="container">
         <h2 class="section-title" data-i18n="downloadTitle">이번 달 묵상 자료</h2>
         <p class="section-desc" data-i18n="downloadDesc">아래 버튼을 눌러 선택하신 언어로 묵상 파일을 다운로드 할 수 있습니다.</p>
-        
-        <!-- 다운로드 버튼 컨테이너 -->
         <div id="devotional-container" class="devotional-buttons"></div>
-
         <a href="archive.html" class="secondary-btn" data-i18n="previousDevotionals">이전 달 묵상 자료 보기</a>
       </div>
     </section>
 
-    <!-- YouTube & About Dark Section -->
-    <section class="section section-dark">
+    <!-- Angel Tree Section -->
+    <section class="section" id="angeltree">
       <div class="container">
-        <!-- About Us -->
-        <h2 class="section-title" data-i18n="aboutTitle">사역 소개</h2>
-        <p class="section-desc" style="max-width: 800px;" data-i18n="aboutDesc">프리즌 리바이벌은 복음을 통해 수감자들의 진정한 회복과 변화를 돕고, 사회의 건강한 일원으로 돌아올 수 있도록 돕는 사역입니다. 하나님의 사랑으로 나아갑니다.</p>
-        
-        <br><br>
+        <div class="section-badge">🎄 Hope for Children</div>
+        <h2 class="section-title" data-i18n="angelTreeTitle">엔젤트리 & 만나브릿지</h2>
+        <p class="section-desc" data-i18n="angelTreeDesc">수감자 자녀들을 위한 성탄 선물과 편지, 그리고 만남의 다리가 되어줍니다.</p>
+        <div class="angel-tree-visual">
+          <img src="https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&q=80&w=1000"
+            alt="Angel Tree" class="angel-tree-img">
+        </div>
+        <div class="angel-tree-cta">
+          <button class="youtube-btn" data-i18n="mannaBridge">만나브릿지 후원하기</button>
+        </div>
+      </div>
+    </section>
 
-        <!-- YouTube Guide -->
-        <h2 class="section-title" data-i18n="youtubeTitle" style="font-size: 2rem;">묵상 유튜브 안내</h2>
-        <button id="youtube-btn" class="youtube-btn" data-i18n="youtubeLinkBtn">유튜브에서 묵상 보기</button>
+    <!-- Programs Section -->
+    <section class="section section-dark" id="programs">
+      <div class="container">
+        <h2 class="section-title" data-i18n="programsTitle">사역 프로그램</h2>
+        <div class="programs-grid">
+          <div class="program-card">
+            <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&q=80&w=600"
+              alt="Inside Program">
+            <div class="program-content">
+              <h3 data-i18n="insideTitle">담장 안 프로그램</h3>
+              <p data-i18n="insideDesc">성경 공부, 수도원 프로젝트 등 내면의 변화를 돕습니다.</p>
+            </div>
+          </div>
+          <div class="program-card">
+            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=600"
+              alt="Volunteer Program">
+            <div class="program-content">
+              <h3 data-i18n="volunteerTitle">자원봉사 프로그램</h3>
+              <p data-i18n="volunteerDesc">중보기도, 노숙인 사역, 방문 성경 공부 등에 참여하세요.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Notice Section -->
+    <section class="section section-notice" id="notice">
+      <div class="container">
+        <div class="section-icon">📋</div>
+        <h2 class="section-title" data-i18n="noticeTitle">공지 및 보고</h2>
+        <div class="notice-board">
+          <div class="notice-item">
+            <div class="notice-left">
+              <span class="notice-dot"></span>
+              <span data-i18n="matchingStatus">주간 매칭 현황</span>
+            </div>
+            <span class="notice-tag">Updated</span>
+          </div>
+          <div class="notice-item">
+            <div class="notice-left">
+              <span class="notice-dot"></span>
+              <span data-i18n="accountingReport">회계 보고</span>
+            </div>
+            <span class="notice-tag tag-monthly">Monthly</span>
+          </div>
+        </div>
       </div>
     </section>
 
   </main>
 
   <footer>
-    <p>&copy; 2026 Prison Revival. All rights reserved.</p>
+    <div class="footer-content container">
+      <div class="footer-logo">
+        <img src="images/favicon.png" alt="PR Logo" class="footer-logo-img">
+        <span class="footer-brand">Prison Revival</span>
+      </div>
+      <div class="footer-info">
+        <div class="footer-contact-item">
+          <span class="footer-icon">💬</span>
+          <span>카카오톡 : Prisonrevival</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-icon">✉️</span>
+          <span>E Mail: 21davidoh@gmail.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-icon">📱</span>
+          <span>휴대폰 : +82-10-5137-8822 (먼저 문자로 연락 부탁드립니다.)</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-icon">👤</span>
+          <span>프리즌 리바이벌 &amp; 엔젤트리 오혁 대표</span>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 Prison Revival. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="js/data.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/app.js"></script>
 </body>
+
 </html>

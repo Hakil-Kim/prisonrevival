@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Prison Revival</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="archive">
+
+  <header>
+    <a href="index.html" class="logo" data-i18n="siteTitle">Prison Revival</a>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="intro.html" data-i18n="navIntro">소개</a></li>
+        <li><a href="index.html#downloads" data-i18n="navDownload">묵상자료</a></li>
+        <li><a href="index.html#angeltree" data-i18n="navAngelTree">엔젤트리</a></li>
+        <li><a href="index.html#programs" data-i18n="navPrograms">프로그램</a></li>
+        <li><a href="youtube.html" data-i18n="navYoutube">유튜브</a></li>
+        <li><a href="index.html#notice" data-i18n="navNotice">공지</a></li>
+        <li><a href="index.html#contact" data-i18n="navContact">연락처</a></li>
+      </ul>
+    </nav>
+    <div class="lang-selector">
+      <select id="lang-select">
+        <option value="ko">한국어</option>
+        <option value="en">English</option>
+        <option value="zh">中文</option>
+        <option value="es">Español</option>
+        <option value="pt">Português</option>
+        <option value="tl">Tagalog</option>
+      </select>
+    </div>
+  </header>
+
+  <main id="intro-page">
+    <!-- Hero Section for Intro -->
+    <section class="intro-hero">
+      <div class="intro-hero-bg"></div>
+      <div class="container">
+        <h1 data-i18n="introPageTitle" class="section-title animate-up">사역 소개</h1>
+        <p data-i18n="introPageDesc" class="section-desc animate-up" style="animation-delay: 0.2s;">프리즌 리바이벌의 사역과 비전을 소개합니다.</p>
+      </div>
+    </section>
+
+    <section class="section container">
+      <!-- 1. Ministry Intro -->
+      <div class="intro-section-block">
+        <h2 class="sub-section-title" data-i18n="introMain">프리즌 리바이벌 사역소개</h2>
+        <div class="intro-text-box" data-i18n="introMainText"></div>
+      </div>
+
+      <!-- 2. Missionary Intro -->
+      <div class="intro-section-block">
+        <h2 class="sub-section-title" data-i18n="missionaryInfo">임은미 선교사님 소개</h2>
+        <div class="missionary-intro-container">
+          <div class="missionary-profile-column">
+            <div class="missionary-photo-area">
+              <div class="photo-placeholder">Profile Photo</div>
+            </div>
+            <button class="secondary-btn full-width-btn" onclick="window.open('https://eunice825.com/%EC%82%AC%EC%97%AD%EC%86%8C%EA%B0%9C', '_blank')" data-i18n="missionarySiteBtn">선교사님 홈페이지 사역소개 보기</button>
+          </div>
+          <div class="missionary-recommendation-area">
+            <h3 data-i18n="recommendation">임은미 선교사님 추천사</h3>
+            <p class="small-text" data-i18n="recommendationText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Partner Pastors -->
+      <div class="intro-section-block">
+        <h2 class="sub-section-title" data-i18n="pastorIntro">프리즌 협력목사님들</h2>
+        <div class="pastor-slider-wrapper">
+          <div class="pastor-slider">
+            <div class="pastor-slides" id="pastorSlides">
+              <div class="pastor-slide"><img src="images/profile/KakaoTalk_Photo_2026-04-27-09-39-59 001.png" alt="Pastor 1"></div>
+              <div class="pastor-slide"><img src="images/profile/KakaoTalk_Photo_2026-04-27-09-39-59 002.png" alt="Pastor 2"></div>
+              <div class="pastor-slide"><img src="images/profile/KakaoTalk_Photo_2026-04-27-09-39-59 003.png" alt="Pastor 3"></div>
+              <div class="pastor-slide"><img src="images/profile/KakaoTalk_Photo_2026-04-27-09-39-59 004.png" alt="Pastor 4"></div>
+              <div class="pastor-slide"><img src="images/profile/KakaoTalk_Photo_2026-04-27-09-39-59 005.png" alt="Pastor 5"></div>
+              <div class="pastor-slide"><img src="images/profile/KakaoTalk_Photo_2026-04-27-09-39-59 006.png" alt="Pastor 6"></div>
+            </div>
+            <button class="slider-btn prev" onclick="moveSlider(-1)">❮</button>
+            <button class="slider-btn next" onclick="moveSlider(1)">❯</button>
+            <div class="slider-dots" id="sliderDots"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. CEO Greeting -->
+      <div class="intro-section-block">
+        <h2 class="sub-section-title" data-i18n="ceoGreeting">프리즌 리바이벌 & 엔젤트리 대표인사말</h2>
+        <div class="intro-text-box" data-i18n="ceoGreetingText"></div>
+      </div>
+
+
+      <!-- Press Section -->
+      <div class="intro-sub-section">
+        <h2 data-i18n="pressTitle" class="sub-section-title">프리즌 리바이벌 언론보도</h2>
+        <div class="press-list">
+          <a href="#" class="press-item" onclick="window.open(appData.introLinks.press.lawToday, '_blank')">
+            <span class="press-name" data-i18n="pressLawToday">법률방송 뉴스 보도</span>
+            <span class="press-link">🔗</span>
+          </a>
+          <a href="#" class="press-item" onclick="window.open(appData.introLinks.press.goodNews, '_blank')">
+            <span class="press-name" data-i18n="pressGoodNews">GoodNews1 뉴스 보도</span>
+            <span class="press-link">🔗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Partners Section -->
+      <div class="intro-sub-section">
+        <h2 data-i18n="partnersFull" class="sub-section-title">프리즌 리바이벌 협력단체</h2>
+        <div class="partners-links-grid">
+          <a href="#" onclick="window.open(appData.introLinks.partners.samintl, '_blank')" data-i18n="partnerSam">(사)쌤인터내셔널</a>
+          <a href="#" onclick="window.open(appData.introLinks.partners.godpeople, '_blank')" data-i18n="partnerGodpeople">(주)갓피플</a>
+          <a href="#" onclick="window.open(appData.introLinks.partners.kyujang, '_blank')" data-i18n="partnerKyujang">(주)규장 출판사</a>
+          <a href="#" onclick="window.open(appData.introLinks.partners.iseum, '_blank')" data-i18n="partnerIseum">(사)아동복지실천회 세움</a>
+          <a href="#" onclick="window.open(appData.introLinks.partners.jusomang, '_blank')" data-i18n="partnerJusomang">주소망 무료급식</a>
+          <a href="#" onclick="window.open(appData.introLinks.partners.alliance, '_blank')" data-i18n="partnerAlliance">프리즌 얼라이언스</a>
+          <a href="#" onclick="window.open(appData.introLinks.partners.fellowship, '_blank')" data-i18n="partnerFellowship">프리즌 펠로우십</a>
+        </div>
+      </div>
+
+      <div style="margin-top: 6rem; text-align: center;">
+        <a href="index.html" class="secondary-btn" data-i18n="backToHome">홈으로 돌아가기</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Prison Revival. All rights reserved.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

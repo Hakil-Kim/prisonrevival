@@ -9,13 +9,29 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('devotional-container')) {
     renderDevotionalButtons();
   }
-  
-  const youtubeBtn = document.getElementById('youtube-btn');
-  if (youtubeBtn) {
-    youtubeBtn.addEventListener('click', () => {
-      window.open(appData.youtubeDevotionalLink, '_blank');
-    });
+
+  if (document.getElementById('pastorSlides')) {
+    initPastorSlider();
   }
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const headerOffset = 80;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    });
+  });
 });
 
 function initLanguage() {
@@ -104,4 +120,110 @@ function renderDevotionalButtons() {
     btnBox.appendChild(btn);
     container.appendChild(btnBox);
   }
+}
+
+let sliderIndex = 1; // Start at 1 because of prepended clone
+let sliderInterval;
+
+// Expose functions globally for HTML onclick handlers
+window.moveSlider = moveSlider;
+window.goToSlide = goToSlide;
+
+function initPastorSlider() {
+  const slidesContainer = document.getElementById('pastorSlides');
+  if (!slidesContainer) return;
+  
+  const originalSlides = Array.from(slidesContainer.children);
+  const slideCount = originalSlides.length;
+  
+  // Clone first and last slides for infinite loop
+  const firstClone = originalSlides[0].cloneNode(true);
+  const lastClone = originalSlides[slideCount - 1].cloneNode(true);
+  
+  slidesContainer.appendChild(firstClone);
+  slidesContainer.insertBefore(lastClone, slidesContainer.firstChild);
+  
+  // Initial position
+  updateSlider(false); // No transition for initial setup
+
+  const dotsContainer = document.getElementById('sliderDots');
+  if (dotsContainer) {
+    dotsContainer.innerHTML = ''; 
+    for (let i = 0; i < slideCount; i++) {
+      const dot = document.createElement('div');
+      dot.className = i === 0 ? 'dot active' : 'dot';
+      dot.addEventListener('click', () => goToSlide(i + 1));
+      dotsContainer.appendChild(dot);
+    }
+  }
+  
+  startSlider();
+  
+  const sliderContainer = document.querySelector('.pastor-slider');
+  if (sliderContainer) {
+    sliderContainer.addEventListener('mouseenter', stopSlider);
+    sliderContainer.addEventListener('mouseleave', startSlider);
+  }
+}
+
+function startSlider() {
+  stopSlider();
+  if (!document.getElementById('pastorSlides')) return;
+  sliderInterval = setInterval(() => {
+    moveSlider(1);
+  }, 2000); // 2 seconds interval
+}
+
+function stopSlider() {
+  if (sliderInterval) clearInterval(sliderInterval);
+}
+
+function moveSlider(step) {
+  const slidesContainer = document.getElementById('pastorSlides');
+  if (!slidesContainer) return;
+  
+  sliderIndex += step;
+  updateSlider(true);
+  
+  const slideCount = slidesContainer.children.length - 2; // Subtract clones
+  
+  // Handle loop jump after transition
+  if (sliderIndex > slideCount) {
+    setTimeout(() => {
+      sliderIndex = 1;
+      updateSlider(false);
+    }, 1000); // Wait for transition duration (1s)
+  } else if (sliderIndex < 1) {
+    setTimeout(() => {
+      sliderIndex = slideCount;
+      updateSlider(false);
+    }, 1000);
+  }
+  
+  startSlider();
+}
+
+function goToSlide(index) {
+  sliderIndex = index;
+  updateSlider(true);
+  startSlider();
+}
+
+function updateSlider(withTransition) {
+  const slidesContainer = document.getElementById('pastorSlides');
+  if (!slidesContainer) return;
+  
+  slidesContainer.style.transition = withTransition ? 'transform 1s cubic-bezier(0.4, 0, 0.2, 1)' : 'none';
+  slidesContainer.style.transform = `translateX(-${sliderIndex * 100}%)`;
+  
+  // Update dots
+  const slideCount = slidesContainer.children.length - 2;
+  let activeIndex = sliderIndex - 1;
+  if (sliderIndex > slideCount) activeIndex = 0;
+  if (sliderIndex < 1) activeIndex = slideCount - 1;
+  
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === activeIndex);
+  });
 }
