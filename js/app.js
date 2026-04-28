@@ -93,7 +93,7 @@ function applyTranslations() {
   elements.forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (t[key]) {
-      el.textContent = t[key];
+      el.innerHTML = t[key];
     }
   });
 
