@@ -67,6 +67,7 @@ header {
 
 .nav-menu {
   display: flex;
+  align-items: center;
   gap: 2rem;
   list-style: none;
 }
@@ -893,10 +894,6 @@ footer {
     border-bottom: none;
   }
 
-  .lang-selector {
-    margin-left: auto;
-    margin-right: 1.5rem;
-  }
 
   .hero-wrapper h1 {
     font-size: 2.8rem;
