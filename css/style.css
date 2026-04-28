@@ -1139,9 +1139,11 @@ footer {
   white-space: nowrap;
 }
 
-.photo-placeholder {
-  color: #ccc;
-  font-size: 0.9rem;
+.missionary-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .missionary-recommendation-area {
