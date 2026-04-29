@@ -18,10 +18,34 @@
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <nav>
       <ul class="nav-menu">
-        <li><a href="intro.html" data-i18n="navIntro">소개</a></li>
+        <li class="dropdown">
+          <a href="intro.html" class="dropdown-toggle">
+            <span data-i18n="navIntro">소개</span>
+            <i class="dropdown-icon"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="intro.html#ministry" data-i18n="navSubMinistry">사역소개</a></li>
+            <li><a href="intro.html#missionary" data-i18n="navSubMissionary">임은미 선교사님</a></li>
+            <li><a href="intro.html#pastors" data-i18n="navSubPastors">협력목사님들</a></li>
+            <li><a href="intro.html#ceo" data-i18n="navSubCeo">대표인사말</a></li>
+            <li><a href="intro.html#press" data-i18n="navSubPress">언론보도</a></li>
+            <li><a href="intro.html#partners" data-i18n="navSubPartners">협력단체</a></li>
+          </ul>
+        </li>
         <li><a href="index.html#downloads" data-i18n="navDownload">묵상자료</a></li>
         <li><a href="index.html#angeltree" data-i18n="navAngelTree">엔젤트리</a></li>
-        <li><a href="programs.html" data-i18n="navPrograms" class="active">프로그램</a></li>
+        <li class="dropdown">
+          <a href="programs.html" class="dropdown-toggle active">
+            <span data-i18n="navPrograms">담장안 프로그램</span>
+            <i class="dropdown-icon"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="programs.html#prayer" data-i18n="navSubPrayer">중보기도 사역</a></li>
+            <li><a href="programs.html#bible" data-i18n="navSubBible">성경공부</a></li>
+            <li><a href="programs.html#monastery" data-i18n="navSubMonastery">수도원 프로젝트</a></li>
+            <li><a href="programs.html#flowing" data-i18n="navSubFlowing">담장 플로잉 프로젝트</a></li>
+          </ul>
+        </li>
         <li><a href="youtube.html" data-i18n="navYoutube">유튜브</a></li>
         <li><a href="index.html#notice" data-i18n="navNotice">공지</a></li>
         <li class="lang-selector-item">
@@ -47,7 +71,7 @@
     </div>
 
     <!-- 1. 중보기도 사역 -->
-    <section class="program-section fade-in">
+    <section id="prayer" class="program-section fade-in">
       <div class="program-img-col">
         <img src="images/programs/KakaoTalk_Photo_2026-04-29-14-37-18.png" data-i18n-src="prayerPoster" alt="중보기도 사역 포스터">
       </div>
@@ -61,10 +85,10 @@
       </div>
     </section>
 
-    <!-- 2. 성경공부 -->
-    <section class="program-section fade-in delay-1">
+    <!-- 2. 프리즌 얼라이언스 성경공부 -->
+    <section id="bible" class="program-section fade-in delay-1">
       <div class="program-img-col">
-        <img src="images/bible_study_poster.png" alt="프리즌 얼라이언스 성경공부 포스터">
+        <img src="images/programs/KakaoTalk_Photo_2026-04-29-14-38-46.png" data-i18n-src="biblePoster" alt="성경공부 포스터">
       </div>
       <div class="program-text-col">
         <h2 class="program-title" data-i18n="prog2Title">프리즌 얼라이언스 성경공부</h2>
@@ -84,9 +108,9 @@
     </section>
 
     <!-- 3. 수도원 프로젝트 -->
-    <section class="program-section fade-in delay-2">
+    <section id="monastery" class="program-section fade-in delay-2">
       <div class="program-img-col">
-        <img src="images/monastery_poster.png" alt="프리즌 수도원 프로젝트 포스터">
+        <img src="images/programs/KakaoTalk_Photo_2026-04-29-14-37-58.png" data-i18n-src="monasteryPoster" alt="수도원 프로젝트 포스터">
       </div>
       <div class="program-text-col">
         <h2 class="program-title" data-i18n="prog3Title">Prison Monastery Project<br>(프리즌 수도원 프로젝트)</h2>
@@ -117,7 +141,7 @@
     </section>
 
     <!-- 4. 과부의 두렙돈 -->
-    <section class="program-section fade-in delay-3">
+    <section id="flowing" class="program-section fade-in delay-3">
       <div class="program-img-col">
         <img src="images/programs/KakaoTalk_Photo_2026-04-27-09-39-59 001.png" data-i18n-src="flowingPoster" alt="플로잉 프로젝트 포스터">
       </div>
@@ -176,8 +200,11 @@
             여러분의 작은 섬김으로 또 다른 생명을 살리는 통로가 됩니다.
           </p>
         </div>
-      </div>
     </section>
+
+    <div style="margin-top: 6rem; text-align: center; margin-bottom: 6rem;">
+      <a href="index.html" class="secondary-btn" data-i18n="backToHome">홈으로 돌아가기</a>
+    </div>
 
   </main>
 

@@ -92,6 +92,93 @@ header {
   transform: translateY(-1px);
 }
 
+/* Dropdown Menu Styles */
+.nav-menu li.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dropdown-icon {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -4px;
+  transition: transform 0.3s;
+  opacity: 0.6;
+}
+
+.dropdown:hover .dropdown-icon {
+  transform: rotate(-135deg);
+  margin-top: 2px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 1rem 0;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 1001;
+  border: 1px solid rgba(17, 42, 34, 0.05);
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Force hide dropdown after click for smooth disappearance */
+.dropdown.force-hide .dropdown-menu {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateX(-50%) translateY(10px) !important;
+}
+
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.8rem 1.5rem;
+  color: var(--dark-green) !important;
+  font-size: 0.9rem !important;
+  opacity: 0.7 !important;
+  transition: all 0.2s !important;
+  transform: none !important;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(184, 233, 134, 0.1);
+  opacity: 1 !important;
+  padding-left: 1.8rem;
+  color: var(--dark-green) !important;
+}
+
+/* Ensure active state works with dropdown */
+.dropdown-toggle.active {
+  opacity: 1 !important;
+  color: var(--dark-green) !important;
+  font-weight: 700;
+}
+
 .logo {
   font-family: var(--font-sans);
   font-size: 1.6rem;
@@ -1567,4 +1654,8 @@ footer {
     width: 100%;
     max-width: 500px;
   }
+}
+/* Anchor Scroll Offset */
+[id] {
+  scroll-margin-top: 120px;
 }

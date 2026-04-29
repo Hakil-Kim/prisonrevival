@@ -38,6 +38,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Dropdown smooth close on click
+  document.querySelectorAll('.dropdown').forEach(dropdown => {
+    const menuLinks = dropdown.querySelectorAll('.dropdown-menu a');
+    
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        dropdown.classList.add('force-hide');
+      });
+    });
+
+    // 마우스가 완전히 해당 메뉴를 벗어났을 때만 다시 활성화 가능하게 함
+    dropdown.addEventListener('mouseleave', () => {
+      dropdown.classList.remove('force-hide');
+    });
+  });
 });
 
 // 모바일 메뉴 토글 함수
