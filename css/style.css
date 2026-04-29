@@ -1420,8 +1420,8 @@ footer {
 
 .video-modal-content {
   position: relative;
-  width: 90%;
-  max-width: 1000px;
+  width: 90vw;
+  max-width: calc(90vh * (16 / 9));
   background: transparent;
   border-radius: 12px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
