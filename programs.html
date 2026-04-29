@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs - Prison Revival</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="archive">
+
+  <header>
+    <a href="index.html" class="logo">
+      <img src="images/favicon.png" alt="PR Logo" class="header-logo-icon">
+      <span data-i18n="siteTitle">Prison Revival</span>
+    </a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="intro.html" data-i18n="navIntro">소개</a></li>
+        <li><a href="index.html#downloads" data-i18n="navDownload">묵상자료</a></li>
+        <li><a href="index.html#angeltree" data-i18n="navAngelTree">엔젤트리</a></li>
+        <li><a href="programs.html" data-i18n="navPrograms" class="active">프로그램</a></li>
+        <li><a href="youtube.html" data-i18n="navYoutube">유튜브</a></li>
+        <li><a href="index.html#notice" data-i18n="navNotice">공지</a></li>
+        <li class="lang-selector-item">
+          <div class="lang-selector">
+            <select id="lang-select">
+              <option value="ko">한국어</option>
+              <option value="en">English</option>
+              <option value="zh">中文</option>
+              <option value="es">Español</option>
+              <option value="pt">Português</option>
+              <option value="tl">Tagalog</option>
+            </select>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="programs-container container">
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <h1 class="section-title" data-i18n="progTitleMain">사역 프로그램</h1>
+      <p class="section-desc" data-i18n="progDescMain">프리즌 리바이벌에서 진행하는 다양한 훈련과 지원 프로그램을 소개합니다.</p>
+    </div>
+
+    <!-- 1. 중보기도 사역 -->
+    <section class="program-section fade-in">
+      <div class="program-img-col">
+        <img src="images/programs/KakaoTalk_Photo_2026-04-29-14-37-18.png" data-i18n-src="prayerPoster" alt="중보기도 사역 포스터">
+      </div>
+      <div class="program-text-col">
+        <h2 class="program-title" data-i18n="prog1Title">프리즌 리바이벌 중보기도 사역</h2>
+        <p class="program-desc" data-i18n="prog1Desc">
+          프리즌 리바이벌 중보기도 사역은 매월 약 1,000통 이상의 편지를 받으며, 그중 중보기도를 요청한 내용을 선별하여 진행됩니다.<br><br>
+          선별된 기도제목은 하루에 한 명씩 중보기도 단톡방에 공유되며, 발렌티어들이 함께 기도한 내용을 정리하여 다시 담장 안으로 편지로 전달합니다.<br><br>
+          이 과정을 통해 재소자들의 기도제목이 실제적인 기도로 연결되고, 기도의 응답과 위로가 다시 편지로 이어지는 순환 구조의 중보기도 사역입니다. 이 중보기도편지를 받고 많은 담장안 식구들이 눈물을 흘리는 소중한 사역입니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. 성경공부 -->
+    <section class="program-section fade-in delay-1">
+      <div class="program-img-col">
+        <img src="images/bible_study_poster.png" alt="프리즌 얼라이언스 성경공부 포스터">
+      </div>
+      <div class="program-text-col">
+        <h2 class="program-title" data-i18n="prog2Title">프리즌 얼라이언스 성경공부</h2>
+        <p class="program-desc" data-i18n="prog2Desc1">
+          프리즌 얼라이언스 성경공부는 미국 프리즌 얼라이언스 팀에서 제공하는 공식 성경공부 커리큘럼으로, 총 3단계 과정으로 구성되어 있습니다.
+        </p>
+        <ul class="program-list">
+          <li data-i18n="prog2List1">1단계 하나님은 어떤 분인가</li>
+          <li data-i18n="prog2List2">2단계 기독교인 리더십</li>
+          <li data-i18n="prog2List3">3단계 그리스도의 제자과정</li>
+        </ul>
+        <p class="program-desc" data-i18n="prog2Desc2">
+          전체 과정은 약 4년에 걸쳐 진행되며, 1단계는 프리즌 묵상편지를 통해 2주에 한 번씩 함께 공부하게 됩니다. 참여자는 각 단계별로 성경공부를 마친 후, 답지와 감상문을 제출해야 다음 단계로 진행할 수 있습니다. (각 단계별 교재는 별도로 구입해야 함)<br><br>
+          3단계까지 모든 과정을 완료할 경우, 프리즌 얼라이언스 코리아에서 발급하는 ‘담장 안 디플로마(학위 아님)’가 제공됩니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. 수도원 프로젝트 -->
+    <section class="program-section fade-in delay-2">
+      <div class="program-img-col">
+        <img src="images/monastery_poster.png" alt="프리즌 수도원 프로젝트 포스터">
+      </div>
+      <div class="program-text-col">
+        <h2 class="program-title" data-i18n="prog3Title">Prison Monastery Project<br>(프리즌 수도원 프로젝트)</h2>
+        <p class="program-desc" data-i18n="prog3Desc">
+          프리즌 리바이벌이 담장 안을 ‘수도원’처럼 변화시키기 위해 진행하는 영적 훈련 프로젝트입니다. 담장안 식구들이 일상 속에서 기도와 말씀 중심의 삶을 살아가도록 돕는 것이 목적입니다.
+        </p>
+        
+        <h3 class="program-account-title" style="margin-top: 1.5rem;" data-i18n="prog3Sub1">참여 방법 (3가지 핵심)</h3>
+        <ul class="program-list">
+          <li data-i18n="prog3List1_1"><strong>말씀 중심 생활:</strong> 매일 성경 읽기 및 묵상 기록, 하루 일과 속 기도 실천, 주일예배 참여 및 기록, 복음 전하기 실천, 예수동행일기 적기</li>
+          <li data-i18n="prog3List1_2"><strong>하루 30분 기도:</strong> 매일 정해진 시간에 30분 기도, 조용한 환경에서 지속적으로 진행</li>
+          <li data-i18n="prog3List1_3"><strong>지원서 제출:</strong> 참여 신청서 작성 후 제출 (참여자 명단은 편지를 통해 관리 및 전달)</li>
+        </ul>
+
+        <h3 class="program-account-title" style="margin-top: 1.5rem;" data-i18n="prog3Sub2">목표</h3>
+        <ul class="program-list">
+          <li data-i18n="prog3List2_1">담장 안 삶을 ‘영적 훈련의 공간’으로 전환</li>
+          <li data-i18n="prog3List2_2">전국 57개 교정기관에 수도원적 삶 확산</li>
+        </ul>
+
+        <h3 class="program-account-title" style="margin-top: 1.5rem;" data-i18n="prog3Sub3">참여 신청 내용</h3>
+        <ul class="program-list">
+          <li data-i18n="prog3List3_1">하루 30분 기도 시간 설정</li>
+          <li data-i18n="prog3List3_2">소속 교정기관 및 정보 기입</li>
+          <li data-i18n="prog3List3_3">서명 후 제출</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4. 과부의 두렙돈 -->
+    <section class="program-section fade-in delay-3">
+      <div class="program-img-col">
+        <img src="images/programs/KakaoTalk_Photo_2026-04-27-09-39-59 001.png" data-i18n-src="flowingPoster" alt="플로잉 프로젝트 포스터">
+      </div>
+      <div class="program-text-col">
+        <h2 class="program-title" data-i18n="prog4Title">Prison Flowing Project<br>(담장 플로잉 프로젝트)</h2>
+        <h3 class="program-account-title" style="color: var(--neon-green); font-size: 1.3rem;" data-i18n="prog4Quote">“몸은 담장 안에 있지만, 마음은 하나님과 함께 흐르는 삶”</h3>
+        <p class="program-desc" data-i18n="prog4Desc">
+          프리즌 리바이벌 & 엔젤트리는 외부 후원에 의존하지 않고, 발렌티어분들의 자발적인 헌신으로 복음을 전하는 사역을 이어가고 있습니다.<br><br>
+          담장 플로잉 프로젝트는 담장 안 식구들이 작은 나눔을 통해 하나님께 감사의 마음을 드리고, 그 사랑이 다시 세상으로 흘러가게 하는 사역입니다. 이는 금액이 아니라, <strong>과부의 두 렙돈처럼 ‘마음’을 드리는 믿음의 선택</strong>입니다.
+        </p>
+
+        <div class="program-account-box" style="background: #fff3f3; border-color: #ff6b6b; margin-bottom: 1.5rem;">
+          <p class="program-account-info" style="color: #d32f2f; font-weight: 500;" data-i18n="prog4Notice">
+            ※ 금액보다 중요한 것은 ‘지속적으로 흘려보내는 마음’입니다.<br>
+            아래 사역 중에 원하시는 사역으로 흘러 보내 주세요.
+          </p>
+        </div>
+
+        <div class="program-account-box">
+          <h4 class="program-account-title" data-i18n="prog4Acct1Title">SAM 인터내셔널 / 아프리카 선교사역</h4>
+          <p class="program-account-info" data-i18n="prog4Acct1Info">
+            기업은행 073-056065-01-069<br>
+            예금주: 사단법인쌤인터내셔널
+          </p>
+        </div>
+
+        <div class="program-account-box">
+          <h4 class="program-account-title" data-i18n="prog4Acct2Title">세움 / 엔젤트리 만나브릿지 / 재소자 자녀 및 가정 지원</h4>
+          <p class="program-account-info" data-i18n="prog4Acct2Info">
+            하나은행 164-910148-12404<br>
+            예금주: 사)아동복지실천회세움
+          </p>
+        </div>
+
+        <div class="program-account-box">
+          <h4 class="program-account-title" data-i18n="prog4Acct3Title">번개탄TV / 다음세대 복음 및 범죄예방 사역</h4>
+          <p class="program-account-info" data-i18n="prog4Acct3Info">
+            기업은행 3927-3927-111<br>
+            예금주: 번개탄TV선교회
+          </p>
+        </div>
+
+        <div class="program-account-box">
+          <h4 class="program-account-title" data-i18n="prog4Acct4Title">프리즌 리바이벌 / 묵상편지, 성경책, 선교사님책 지원, 엔젤트리</h4>
+          <p class="program-account-info" data-i18n="prog4Acct4Info">
+            282201-04-332458<br>
+            예금주: 프리즌 리바이벌
+          </p>
+        </div>
+
+        <div class="program-account-box" style="background: #f0fdf4; border-color: #22c55e;">
+          <h4 class="program-account-title" data-i18n="prog4FooterTitle">꼭 기억해 주세요</h4>
+          <p class="program-account-info" data-i18n="prog4FooterInfo">
+            이 사역은 억지로 하는 헌금도, 부담으로 드리는 나눔도 아닙니다.<br>
+            단지 <strong>“지금 내게 있는 작은 것을 하나님께 드리는 연습”</strong>입니다.<br>
+            여러분의 작은 섬김으로 또 다른 생명을 살리는 통로가 됩니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-content container">
+      <div class="footer-logo">
+        <img src="images/favicon.png" alt="PR Logo" class="footer-logo-img">
+        <span class="footer-brand">Prison Revival</span>
+      </div>
+      
+      <div class="footer-info-grid">
+        <div class="footer-col footer-links">
+          <h4 data-i18n="footerLinksTitle">관련 링크</h4>
+          <a href="http://pf.kakao.com/_ptYAG/chat" target="_blank" class="footer-link" data-i18n="footerLinkVol">프리즌 리바이벌 발렌티어 지원</a>
+          <a href="https://mall.godpeople.com/?G=1721883418-5" target="_blank" class="footer-link" data-i18n="footerLinkBible">성경책 갓피플 플로잉 구매링크</a>
+          <a href="#" target="_blank" class="footer-link" data-i18n="footerLinkBook">임은미선교사님책 플로잉 구매링크</a>
+          <a href="https://forms.gle/4x7HjQGWheJu8Sfb9" target="_blank" class="footer-link" data-i18n="footerLinkSponsor">엔트리 후원</a>
+          <a href="https://online.mrm.or.kr/sr5t4uf" target="_blank" class="footer-link" data-i18n="footerLinkManna">엔젤트리 만나브릿지 정기결연</a>
+        </div>
+
+        <div class="footer-col footer-contact">
+          <h4 data-i18n="footerContactTitle">Contact Info</h4>
+          <div class="footer-contact-item">
+            <span class="footer-icon">💬</span>
+            <span data-i18n="footerContactKakao">카카오톡 : Prisonrevival</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-icon">✉️</span>
+            <span>E Mail: 21davidoh@gmail.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-icon">📱</span>
+            <span data-i18n="footerContactPhone">휴대폰 : +82-10-5137-8822 (먼저 문자로 연락 부탁드립니다.)</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-icon">👤</span>
+            <span data-i18n="footerContactName">프리즌 리바이벌 &amp; 엔젤트리 오혁 대표</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="copyright">&copy; 2026 Prison Revival. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

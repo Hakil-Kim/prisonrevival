@@ -97,6 +97,15 @@ function applyTranslations() {
     }
   });
 
+  // 이미지 다국어 처리 (data-i18n-src)
+  const imgElements = document.querySelectorAll('[data-i18n-src]');
+  imgElements.forEach(img => {
+    const key = img.getAttribute('data-i18n-src');
+    if (t[key]) {
+      img.src = t[key];
+    }
+  });
+
   // title 동적 변경
   if (t['siteTitle']) {
     document.title = t['siteTitle'];
