@@ -77,5 +77,15 @@ const appData = {
       alliance: "https://prisonalliance.org/about/",
       fellowship: "https://www.prisonfellowship.org/"
     }
+  },
+
+  // 발렌티어 안내 관련 링크
+  volunteerGuideLinks: {
+    kakaoSupport: "http://pf.kakao.com/_ptYAG/chat",
+    chatRooms: {
+      main: "https://invite.kakao.com/tc/AP7EYFnhfD",
+      prayer: "https://invite.kakao.com/tc/ywidwLqV80",
+      meditation: "https://invite.kakao.com/tc/OXPpjmI2Qf"
+    }
   }
 };

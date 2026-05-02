@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   applyTranslations();
   setupLanguageSelector();
+  initImageModal();
   
   if (document.getElementById('devotional-container')) {
     renderDevotionalButtons();
@@ -52,6 +53,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // 마우스가 완전히 해당 메뉴를 벗어났을 때만 다시 활성화 가능하게 함
     dropdown.addEventListener('mouseleave', () => {
       dropdown.classList.remove('force-hide');
+    });
+  });
+
+  // Mobile Dropdown Toggle Logic
+  document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      if (window.innerWidth <= 768) {
+        // 모바일에서는 첫 클릭 시 서브메뉴 토글
+        const dropdown = this.closest('.dropdown');
+        if (dropdown) {
+          e.preventDefault();
+          e.stopPropagation();
+          dropdown.classList.toggle('mobile-active');
+        }
+      }
     });
   });
 });
@@ -264,5 +280,56 @@ function updateSlider(withTransition) {
   const dots = document.querySelectorAll('.dot');
   dots.forEach((dot, i) => {
     dot.classList.toggle('active', i === activeIndex);
+  });
+}
+
+/**
+ * 이미지 모달(라이트박스) 초기화
+ */
+function initImageModal() {
+  const images = document.querySelectorAll('.program-img-col img');
+  if (images.length === 0) return;
+
+  // 모달 요소가 없으면 생성
+  let modal = document.getElementById('imageModal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'imageModal';
+    modal.className = 'modal';
+    modal.innerHTML = `
+      <span class="modal-close">&times;</span>
+      <img class="modal-content" id="modalImage">
+    `;
+    document.body.appendChild(modal);
+  }
+
+  const modalImg = document.getElementById('modalImage');
+  const closeBtn = modal.querySelector('.modal-close');
+
+  images.forEach(img => {
+    img.onclick = function() {
+      modal.style.display = "flex";
+      modalImg.src = this.src;
+      document.body.style.overflow = 'hidden'; // 스크롤 방지
+    }
+  });
+
+  function closeModal() {
+    modal.style.display = "none";
+    document.body.style.overflow = 'auto'; // 스크롤 복원
+  }
+
+  closeBtn.onclick = closeModal;
+  modal.onclick = function(e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  };
+
+  // ESC 키로 닫기
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.style.display === "flex") {
+      closeModal();
+    }
   });
 }
