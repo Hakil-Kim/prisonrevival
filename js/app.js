@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Dropdown smooth close on click
+  // Dropdown smooth close on click of sub-menu items
   document.querySelectorAll('.dropdown').forEach(dropdown => {
     const menuLinks = dropdown.querySelectorAll('.dropdown-menu a');
     
@@ -50,22 +50,28 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // 마우스가 완전히 해당 메뉴를 벗어났을 때만 다시 활성화 가능하게 함
+    // Cleanup states on mouseleave
     dropdown.addEventListener('mouseleave', () => {
       dropdown.classList.remove('force-hide');
+      dropdown.classList.remove('desktop-active');
     });
   });
 
-  // Mobile Dropdown Toggle Logic
+  // Mobile & Desktop Dropdown Toggle Logic
   document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
     toggle.addEventListener('click', function(e) {
-      if (window.innerWidth <= 768) {
-        // 모바일에서는 첫 클릭 시 서브메뉴 토글
-        const dropdown = this.closest('.dropdown');
-        if (dropdown) {
-          e.preventDefault();
-          e.stopPropagation();
+      const dropdown = this.closest('.dropdown');
+      if (dropdown) {
+        // Dropdown toggles should not navigate to their href
+        e.preventDefault();
+        e.stopPropagation();
+        
+        if (window.innerWidth <= 768) {
+          // Mobile: toggle
           dropdown.classList.toggle('mobile-active');
+        } else {
+          // Desktop: ensure it's open and stays open (user said "또 클릭하면 접혀지지 않도록")
+          dropdown.classList.add('desktop-active');
         }
       }
     });

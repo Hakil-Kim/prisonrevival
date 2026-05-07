@@ -7,6 +7,99 @@
   <title>YouTube - Prison Revival</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .youtube-section {
+      padding: 6rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .youtube-section:last-child {
+      border-bottom: none;
+    }
+
+    .youtube-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .youtube-content h3 {
+      font-size: 2.2rem;
+      color: var(--dark-green);
+      margin-bottom: 1.5rem;
+    }
+
+    .youtube-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #4b5563;
+      margin-bottom: 2rem;
+    }
+
+    .video-preview {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .video-preview:hover {
+      transform: translateY(-5px);
+    }
+
+    .video-preview img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .video-preview .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      background: rgba(184, 233, 134, 0.9);
+      color: var(--dark-green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .yt-btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--neon-green);
+      color: var(--dark-green);
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 50px;
+      box-shadow: 0 10px 20px rgba(184, 233, 134, 0.3);
+      transition: all 0.3s;
+    }
+
+    .yt-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(184, 233, 134, 0.4);
+    }
+
+    @media (max-width: 900px) {
+      .youtube-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .youtube-content {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
 <body class="archive">
@@ -82,7 +175,20 @@
             <li><a href="volunteer_guide.html#contributors" data-i18n="navSubContributors">섬겨주시는 분들</a></li>
           </ul>
         </li>
-        <li><a href="youtube.html" data-i18n="navYoutube" class="active">유튜브</a></li>
+        <li class="dropdown">
+          <a href="youtube.html" class="dropdown-toggle active">
+            <span data-i18n="navYoutube">유튜브</span>
+            <i class="dropdown-icon"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="youtube.html#main" data-i18n="navSubYtMain">프리즌 리바이벌</a></li>
+            <li><a href="youtube.html#intro" data-i18n="navSubYtIntro">사역소개</a></li>
+            <li><a href="youtube.html#anniversary" data-i18n="navSubYtAnniversary">3주년 예배 스케치</a></li>
+            <li><a href="youtube.html#meditation" data-i18n="navSubYtMeditation">임은미 선교사 묵상</a></li>
+            <li><a href="youtube.html#inside" data-i18n="navSubYtInside">담장안 은혜 영상</a></li>
+            <li><a href="youtube.html#angeltree" data-i18n="navSubYtAngelTree">엔젤트리 영상</a></li>
+          </ul>
+        </li>
         <li><a href="index.html#notice" data-i18n="navNotice">공지</a></li>
         <li class="lang-selector-item">
           <div class="lang-selector">
@@ -100,70 +206,105 @@
     </nav>
   </header>
 
-  <main class="container" id="youtube">
-    <section class="section">
+  <main class="container">
+    <div style="padding-top: 100px; text-align: center;">
       <h1 data-i18n="youtubeTitle" class="section-title">유튜브 채널</h1>
       <p data-i18n="youtubeDesc" class="section-desc">다양한 채널을 통해 프리즌 리바이벌의 소식을 만나보세요.</p>
+    </div>
 
-      <!-- Main Video (Redirects to YouTube due to Embed restrictions) -->
-      <a href="javascript:void(0)" onclick="openVideoModal('qiTprhhuOSs')" class="video-container" style="margin-top: 3rem; margin-bottom: 5rem; display: block; text-decoration: none; position: relative; transition: all 0.3s; cursor: pointer;">
-        <div class="video-wrapper">
-          <div class="video-thumb" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-            <img src="https://img.youtube.com/vi/qiTprhhuOSs/maxresdefault.jpg" alt="프리즌 3주년 예배 스케치" style="object-fit: cover; width: 100%; height: 100%; transition: transform 0.6s;">
-            <!-- Make play icon always visible for the main video -->
-            <span class="play-icon" style="opacity: 1; font-size: 2.5rem; width: 80px; height: 80px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">▶</span>
-          </div>
+    <!-- 1. Main -->
+    <section class="youtube-section" id="main">
+      <div class="youtube-grid">
+        <div class="youtube-content">
+          <h3 data-i18n="navSubYtMain">프리즌 리바이벌</h3>
+          <p>프리즌 리바이벌의 공식 유튜브 채널에서 다양한 숏츠 영상과 소식을 확인하세요.</p>
+          <a href="https://www.youtube.com/@PrisonRevival/shorts" target="_blank" class="yt-btn">YouTube Shorts 보기</a>
         </div>
-      </a>
-
-      <div class="video-grid" style="margin-top: 4rem;">
-        
-        <!-- 1. 프리즌 리바이벌 -->
-        <a href="https://www.youtube.com/@PrisonRevival/shorts" target="_blank" class="video-card" style="text-decoration: none; display: block;">
-          <div class="video-thumb">
-            <img src="images/yt_shorts.png" alt="Shorts">
-            <span class="play-icon">🔗</span>
-          </div>
-          <h3 class="video-title">프리즌 리바이벌</h3>
-        </a>
-
-
-
-
-
-        <!-- 4. 임은미 선교사 묵상 -->
-        <a href="https://www.youtube.com/playlist?list=PLY8ptMzVZp7V4DsIzbPFEsJA73cu5hvcX" target="_blank" class="video-card" style="text-decoration: none; display: block;">
-          <div class="video-thumb">
-            <img src="images/yt_meditation.png" alt="Meditation">
-            <span class="play-icon">🔗</span>
-          </div>
-          <h3 class="video-title">임은미 선교사 묵상</h3>
-        </a>
-
-        <!-- 5. 담장안에서 온 은혜의 영상 -->
-        <a href="https://www.youtube.com/playlist?list=PLY8ptMzVZp7V4DWZ4Zn5EpKohvzgGCIkV" target="_blank" class="video-card" style="text-decoration: none; display: block;">
-          <div class="video-thumb">
-            <img src="images/yt_grace.png" alt="Grace">
-            <span class="play-icon">🔗</span>
-          </div>
-          <h3 class="video-title">담장안에서 온 은혜의 영상</h3>
-        </a>
-
-        <!-- 6. 엔절트리 -->
-        <a href="https://www.youtube.com/playlist?list=PLY8ptMzVZp7VbyoLKBaEJV0XkCLp2PTzQ" target="_blank" class="video-card" style="text-decoration: none; display: block;">
-          <div class="video-thumb">
-            <img src="images/yt_angel.png" alt="Angel Tree">
-            <span class="play-icon">🔗</span>
-          </div>
-          <h3 class="video-title">엔젤트리</h3>
-        </a>
-
-      </div>
-
-      <div style="margin-top: 6rem; text-align: center;">
-        <a href="index.html" class="secondary-btn" data-i18n="backToHome">홈으로 돌아가기</a>
+        <div class="video-preview" onclick="window.open('https://www.youtube.com/@PrisonRevival/shorts', '_blank')">
+          <img src="images/yt_shorts.png" alt="Shorts">
+          <span class="play-icon">🔗</span>
+        </div>
       </div>
     </section>
+
+    <!-- 2. Ministry Intro -->
+    <section class="youtube-section" id="intro">
+      <div class="youtube-grid">
+        <div class="video-preview" onclick="openVideoModal('oG_jy34D42M')">
+          <img src="https://img.youtube.com/vi/oG_jy34D42M/hqdefault.jpg" alt="Intro">
+          <span class="play-icon">▶</span>
+        </div>
+        <div class="youtube-content">
+          <h3 data-i18n="navSubYtIntro">사역소개</h3>
+          <p>프리즌 리바이벌이 걸어온 길과 사역의 비전을 소개하는 영상입니다.</p>
+          <button onclick="openVideoModal('oG_jy34D42M')" class="yt-btn">영상 재생하기</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 3rd Anniversary -->
+    <section class="youtube-section" id="anniversary">
+      <div class="youtube-grid">
+        <div class="youtube-content">
+          <h3 data-i18n="navSubYtAnniversary">3주년 예배 스케치</h3>
+          <p>프리즌 리바이벌 창립 3주년 감사예배의 감동적인 순간들을 담았습니다.</p>
+          <button onclick="openVideoModal('qiTprhhuOSs')" class="yt-btn">영상 재생하기</button>
+        </div>
+        <div class="video-preview" onclick="openVideoModal('qiTprhhuOSs')">
+          <img src="https://img.youtube.com/vi/qiTprhhuOSs/hqdefault.jpg" alt="Anniversary">
+          <span class="play-icon">▶</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Meditation -->
+    <section class="youtube-section" id="meditation">
+      <div class="youtube-grid">
+        <div class="video-preview" onclick="window.open('https://www.youtube.com/playlist?list=PLY8ptMzVZp7V4DsIzbPFEsJA73cu5hvcX', '_blank')">
+          <img src="images/yt_meditation.png" alt="Meditation">
+          <span class="play-icon">🔗</span>
+        </div>
+        <div class="youtube-content">
+          <h3 data-i18n="navSubYtMeditation">임은미 선교사 묵상</h3>
+          <p>임은미 선교사님의 깊이 있는 말씀 묵상 재생목록으로 초대합니다.</p>
+          <a href="https://www.youtube.com/playlist?list=PLY8ptMzVZp7V4DsIzbPFEsJA73cu5hvcX" target="_blank" class="yt-btn">재생목록 보기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Grace Inside -->
+    <section class="youtube-section" id="inside">
+      <div class="youtube-grid">
+        <div class="youtube-content">
+          <h3 data-i18n="navSubYtInside">담장안 은혜 영상</h3>
+          <p>담장 안에서 전해져 온 놀라운 은혜와 변화의 간증들을 만나보세요.</p>
+          <a href="https://www.youtube.com/playlist?list=PLY8ptMzVZp7V4DWZ4Zn5EpKohvzgGCIkV" target="_blank" class="yt-btn">재생목록 보기</a>
+        </div>
+        <div class="video-preview" onclick="window.open('https://www.youtube.com/playlist?list=PLY8ptMzVZp7V4DWZ4Zn5EpKohvzgGCIkV', '_blank')">
+          <img src="images/yt_grace.png" alt="Grace">
+          <span class="play-icon">🔗</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Angel Tree -->
+    <section class="youtube-section" id="angeltree">
+      <div class="youtube-grid">
+        <div class="video-preview" onclick="window.open('https://www.youtube.com/playlist?list=PLY8ptMzVZp7VbyoLKBaEJV0XkCLp2PTzQ', '_blank')">
+          <img src="images/yt_angel.png" alt="Angel Tree">
+          <span class="play-icon">🔗</span>
+        </div>
+        <div class="youtube-content">
+          <h3 data-i18n="navSubYtAngelTree">엔젤트리 영상</h3>
+          <p>아이들에게 사랑과 희망을 전하는 엔젤트리 사역의 영상 모음입니다.</p>
+          <a href="https://www.youtube.com/playlist?list=PLY8ptMzVZp7VbyoLKBaEJV0XkCLp2PTzQ" target="_blank" class="yt-btn">재생목록 보기</a>
+        </div>
+      </div>
+    </section>
+
+    <div style="margin: 6rem 0; text-align: center;">
+      <a href="index.html" class="secondary-btn" data-i18n="backToHome">홈으로 돌아가기</a>
+    </div>
   </main>
 
   <footer>
@@ -174,7 +315,6 @@
       </div>
       
       <div class="footer-info-grid">
-        <!-- Left Column -->
         <div class="footer-col footer-links">
           <h4 data-i18n="footerLinksTitle">관련 링크</h4>
           <a href="http://pf.kakao.com/_ptYAG/chat" target="_blank" class="footer-link" data-i18n="footerLinkVol">프리즌 리바이벌 발렌티어 지원</a>
@@ -184,16 +324,11 @@
           <a href="https://online.mrm.or.kr/sr5t4uf" target="_blank" class="footer-link" data-i18n="footerLinkManna">엔젤트리 만나브릿지 정기결연</a>
         </div>
 
-        <!-- Right Column -->
         <div class="footer-col footer-contact">
           <h4 data-i18n="footerContactTitle">Contact Info</h4>
           <div class="footer-contact-item">
             <span class="footer-icon">💬</span>
             <span data-i18n="footerContactKakao">카카오톡 : Prisonrevival</span>
-          </div>
-          <div class="footer-contact-item">
-            <span class="footer-icon">✉️</span>
-            <span>E Mail: 21davidoh@gmail.com</span>
           </div>
           <div class="footer-contact-item">
             <span class="footer-icon">📱</span>
@@ -228,11 +363,8 @@
     function openVideoModal(videoId) {
       const modal = document.getElementById('videoModal');
       const iframe = document.getElementById('modalVideoFrame');
-      // Set the src with autoplay enabled
       iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&playsinline=1&rel=0`;
       modal.style.display = 'flex';
-      
-      // Slight delay to allow display:flex to apply before adding active class for animation
       setTimeout(() => {
         modal.classList.add('active');
       }, 10);
@@ -242,15 +374,12 @@
       const modal = document.getElementById('videoModal');
       const iframe = document.getElementById('modalVideoFrame');
       modal.classList.remove('active');
-      
-      // Wait for transition to finish before hiding and clearing src
       setTimeout(() => {
         modal.style.display = 'none';
-        iframe.src = ''; // Clear src to stop video
+        iframe.src = ''; 
       }, 300);
     }
 
-    // Close modal when clicking outside the video
     document.getElementById('videoModal').addEventListener('click', function(e) {
       if (e.target === this) {
         closeVideoModal();

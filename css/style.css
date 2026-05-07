@@ -114,7 +114,8 @@ header {
   opacity: 0.6;
 }
 
-.dropdown:hover .dropdown-icon {
+.dropdown:hover .dropdown-icon,
+.dropdown.desktop-active .dropdown-icon {
   transform: rotate(-135deg);
   margin-top: 2px;
 }
@@ -137,7 +138,8 @@ header {
   border: 1px solid rgba(17, 42, 34, 0.05);
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu,
+.dropdown.desktop-active .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
