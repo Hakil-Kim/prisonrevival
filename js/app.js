@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
     renderDevotionalButtons();
   }
 
+  if (document.getElementById('weekly-meditation-container')) {
+    renderWeeklyMeditationButtons();
+    renderYearlyMeditationArchive();
+  }
+
   if (document.getElementById('pastorSlides')) {
     initPastorSlider();
   }
@@ -118,6 +123,10 @@ function setupLanguageSelector() {
       // (혹은 버튼 텍스트가 번역되어야 하니 리렌더링 권장)
       if (document.getElementById('devotional-container')) {
         renderDevotionalButtons();
+      }
+      if (document.getElementById('weekly-meditation-container')) {
+        renderWeeklyMeditationButtons();
+        renderYearlyMeditationArchive();
       }
     });
   }
@@ -338,4 +347,224 @@ function initImageModal() {
       closeModal();
     }
   });
+}
+
+/**
+ * 최근 5주치 묵상 자료 렌더링
+ */
+function renderWeeklyMeditationButtons() {
+  const container = document.getElementById('weekly-meditation-container');
+  if (!container) return;
+  container.innerHTML = ''; 
+
+  const t = translations[currentLang] || translations['ko'];
+  const sundays = [];
+  const today = new Date();
+  
+  // 가장 최근 일요일 찾기 (오늘이 일요일이면 오늘 포함)
+  const lastSunday = new Date(today);
+  lastSunday.setDate(today.getDate() - today.getDay());
+  lastSunday.setHours(0, 0, 0, 0);
+
+  for (let i = 0; i < 5; i++) {
+    const d = new Date(lastSunday);
+    d.setDate(lastSunday.getDate() - (i * 7));
+    sundays.push(d);
+  }
+
+  sundays.forEach((date, index) => {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const dateStr = `${year}-${month}-${day}`;
+    
+    // 버튼 라벨: 언어별 현지화 날짜 포맷
+    let dateLabel = '';
+    if (currentLang === 'ko') {
+      dateLabel = `${year}년 ${month}월 ${day}일`;
+    } else {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      dateLabel = date.toLocaleDateString(currentLang === 'zh' ? 'zh-CN' : currentLang, options);
+    }
+    const label = `${dateLabel}${t['meditationDateSuffix'] || (currentLang === 'ko' ? ' 묵상' : ' Devotional')}`;
+
+    const btnBox = document.createElement('div');
+    btnBox.className = 'btn-box';
+    
+    const btn = document.createElement('button');
+    btn.className = 'download-btn';
+    btn.innerHTML = `<span>${dateLabel}</span>`;
+    
+    btn.addEventListener('click', () => {
+      const linkData = appData.weeklyMeditationLinks[dateStr];
+      const link = linkData ? linkData[currentLang] : null;
+      if (link) {
+        window.open(link, '_blank');
+      } else {
+        alert(currentLang === 'ko' ? "해당 날짜의 자료를 준비 중입니다." : "Materials for this date are being prepared.");
+      }
+    });
+    
+    btnBox.appendChild(btn);
+    container.appendChild(btnBox);
+  });
+}
+
+/**
+ * 2026년 연간 묵상 자료 아카이브 렌더링 (플로팅 UX 개선)
+ */
+function renderYearlyMeditationArchive() {
+  const container = document.getElementById('yearly-meditation-container');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const hybridWrapper = document.createElement('div');
+  hybridWrapper.className = 'archive-hybrid-container';
+
+  // 1. 년도 행
+  const yearRow = document.createElement('div');
+  yearRow.className = 'year-pill-row';
+  
+  // 2. 플로팅 드롭다운 메뉴
+  const floatingMenu = document.createElement('div');
+  floatingMenu.className = 'archive-floating-menu';
+
+  // 2-1. 월 컬럼
+  const monthCol = document.createElement('div');
+  monthCol.className = 'archive-column';
+  monthCol.innerHTML = `<h4 data-i18n="archiveMonth">Month</h4>`;
+  const monthMenu = document.createElement('div');
+  monthMenu.className = 'vertical-menu';
+  monthCol.appendChild(monthMenu);
+
+  // 2-2. 일자 컬럼
+  const dateCol = document.createElement('div');
+  dateCol.className = 'archive-column';
+  dateCol.innerHTML = `<h4 data-i18n="archiveDate">Date</h4>`;
+  const dateMenu = document.createElement('div');
+  dateMenu.className = 'vertical-menu';
+  dateCol.appendChild(dateMenu);
+
+  floatingMenu.appendChild(monthCol);
+  floatingMenu.appendChild(dateCol);
+
+  const years = [2026, 2025, 2024, 2023, 2022, 2021];
+
+  years.forEach(year => {
+    const yearPill = document.createElement('div');
+    yearPill.className = 'archive-pill';
+    yearPill.textContent = year;
+
+    yearPill.addEventListener('mouseenter', (e) => {
+      yearRow.querySelectorAll('.archive-pill').forEach(p => p.classList.remove('active'));
+      yearPill.classList.add('active');
+      
+      // 메뉴 내용 업데이트
+      updateMonthMenu(year, monthMenu, dateMenu);
+      
+      // 위치 계산 및 표시
+      const rect = yearPill.getBoundingClientRect();
+      const containerRect = hybridWrapper.getBoundingClientRect();
+      
+      // 알약의 중앙에 메뉴가 오도록 계산 (최대/최소 범위 제한)
+      let leftPos = (rect.left - containerRect.left) + (rect.width / 2) - 225; // 225는 메뉴 너비의 절반
+      if (leftPos < 0) leftPos = 0;
+      if (leftPos + 450 > containerRect.width) leftPos = containerRect.width - 450;
+      
+      floatingMenu.style.left = `${leftPos}px`;
+      floatingMenu.classList.add('active');
+    });
+
+    yearRow.appendChild(yearPill);
+  });
+
+  // 컨테이너 밖으로 마우스가 나가면 메뉴 닫기
+  hybridWrapper.addEventListener('mouseleave', () => {
+    floatingMenu.classList.remove('active');
+    yearRow.querySelectorAll('.archive-pill').forEach(p => p.classList.remove('active'));
+  });
+
+  hybridWrapper.appendChild(yearRow);
+  hybridWrapper.appendChild(floatingMenu);
+  container.appendChild(hybridWrapper);
+}
+
+/**
+ * 특정 년도의 월 메뉴 업데이트
+ */
+function updateMonthMenu(year, monthMenu, dateMenu) {
+  monthMenu.innerHTML = '';
+  const today = new Date();
+  const endMonth = (today.getFullYear() === year) ? today.getMonth() : 11;
+
+  for (let m = endMonth; m >= 0; m--) {
+    const monthItem = document.createElement('div');
+    monthItem.className = 'archive-item';
+    monthItem.textContent = currentLang === 'ko' ? `${m + 1}월` : new Date(year, m).toLocaleString(currentLang, { month: 'long' });
+
+    monthItem.addEventListener('mouseenter', () => {
+      monthMenu.querySelectorAll('.archive-item').forEach(i => i.classList.remove('active'));
+      monthItem.classList.add('active');
+      updateDateMenu(year, m, dateMenu);
+    });
+
+    monthMenu.appendChild(monthItem);
+  }
+}
+
+/**
+ * 특정 년도/월의 일자 메뉴 업데이트
+ */
+function updateDateMenu(year, month, dateMenu) {
+  dateMenu.innerHTML = '';
+  const sundays = getSundaysOfMonth(year, month);
+
+  sundays.reverse().forEach(date => {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    const dateStr = `${y}-${m}-${d}`;
+    const linkData = appData.weeklyMeditationLinks[dateStr];
+    
+    const dateItem = document.createElement('div');
+    dateItem.className = 'date-item';
+    if (!linkData) {
+      dateItem.style.opacity = '0.5';
+      dateItem.style.borderStyle = 'dashed';
+    }
+    
+    let dateLabel = '';
+    if (currentLang === 'ko') {
+      dateLabel = `${parseInt(m)}월 ${parseInt(d)}일`;
+    } else {
+      dateLabel = date.toLocaleDateString(currentLang, { month: 'short', day: 'numeric' });
+    }
+    
+    dateItem.textContent = dateLabel;
+    dateItem.addEventListener('click', () => {
+      const link = linkData ? linkData[currentLang] : '#';
+      if (link && link !== '#') {
+        window.open(link, '_blank');
+      } else {
+        alert(currentLang === 'ko' ? "해당 날짜의 자료를 준비 중입니다." : "Materials for this date are being prepared.");
+      }
+    });
+    
+    dateMenu.appendChild(dateItem);
+  });
+}
+
+/**
+ * 특정 연도/월의 모든 일요일 날짜 가져오기
+ */
+function getSundaysOfMonth(year, month) {
+  const dates = [];
+  const date = new Date(year, month, 1);
+  while (date.getMonth() === month) {
+    if (date.getDay() === 0) {
+      dates.push(new Date(date));
+    }
+    date.setDate(date.getDate() + 1);
+  }
+  return dates;
 }

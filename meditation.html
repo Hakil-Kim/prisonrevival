@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="noticeMatchingTitle">Weekly Prison Matching Status - Prison Revival</title>
+  <title>Devotionals - Prison Revival</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="archive">
 
   <header>
     <a href="index.html" class="logo">
@@ -32,7 +32,7 @@
             <li><a href="intro.html#partners" data-i18n="navSubPartners">협력단체</a></li>
           </ul>
         </li>
-        <li><a href="meditation.html" data-i18n="navDownload">묵상자료</a></li>
+        <li><a href="meditation.html" class="active" data-i18n="navDownload">묵상자료</a></li>
         <li class="dropdown">
           <a href="angeltree.html" class="dropdown-toggle">
             <span data-i18n="navAngelTree">엔젤트리</span>
@@ -96,7 +96,7 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="index.html#notice" class="dropdown-toggle active">
+          <a href="index.html#notice" class="dropdown-toggle">
             <span data-i18n="navNotice">공지/보고</span>
             <i class="dropdown-icon"></i>
           </a>
@@ -123,20 +123,34 @@
     </nav>
   </header>
 
-  <main class="container">
-    <div style="text-align: center; margin-top: 8rem; margin-bottom: 4rem;">
-      <h1 class="section-title" data-i18n="noticeMatchingTitle">매주 프리즌 매칭현황 보고</h1>
-    </div>
-
-    <section class="section">
-      <div style="background: white; padding: 4rem; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); text-align: center; border: 1px solid rgba(0,0,0,0.05);">
-        <p data-i18n="noticePagePlaceholder" style="font-size: 1.2rem; color: #666;">상세 내용은 추후 업데이트 예정입니다.</p>
+  <main>
+    <section class="intro-hero" style="min-height: 40vh;">
+      <div class="intro-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&q=80&w=1600');"></div>
+      <div class="container">
+        <h1 data-i18n="meditationPageTitle" class="section-title animate-up">묵상 자료</h1>
+        <p data-i18n="meditationPageDesc" class="section-desc animate-up" style="animation-delay: 0.2s;">최근 5주간의 묵상 자료를 확인하실 수 있습니다.</p>
       </div>
     </section>
 
-    <div style="margin-top: 6rem; text-align: center; margin-bottom: 6rem;">
-      <a href="index.html" class="secondary-btn" data-i18n="backToHome">홈으로 돌아가기</a>
-    </div>
+    <section class="section container">
+      <div class="intro-section-block">
+        <h2 class="sub-section-title" data-i18n="meditationRecentTitle">최근 5주치 묵상 자료</h2>
+        <div id="weekly-meditation-container" class="devotional-buttons meditation-theme-light" style="margin-top: 3rem;">
+          <!-- Dynamic content will be injected here -->
+        </div>
+      </div>
+
+      <div class="intro-section-block" style="margin-top: 3rem; text-align: center;">
+        <h2 class="sub-section-title" data-i18n="meditationYearlyTitle">묵상 자료 아카이브</h2>
+        <div id="yearly-meditation-container" style="padding-bottom: 280px;">
+          <!-- Monthly groupings will be injected here -->
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem; text-align: center;">
+        <a href="index.html" class="secondary-btn" data-i18n="backToHome">홈으로 돌아가기</a>
+      </div>
+    </section>
   </main>
 
   <footer>

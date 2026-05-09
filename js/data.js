@@ -47,6 +47,55 @@ const appData = {
       tl: "https://drive.google.com/file/d/1MkPRFdtaMldB0v0oXJhx_U_KsgiL2l4m/view?usp=sharing"
     }
   },
+
+  // 최근 5주치 묵상 자료 (자동 계산용 날짜 키 기준)
+  weeklyMeditationLinks: {
+    "2026-05-03": {
+      ko: "https://drive.google.com/file/d/1SxUviSBDtH0trvKsRLd55lIW8YZA1N18/view?usp=sharing",
+      en: "https://drive.google.com/file/d/1SxUviSBDtH0trvKsRLd55lIW8YZA1N18/view?usp=sharing",
+      zh: "https://drive.google.com/file/d/1SxUviSBDtH0trvKsRLd55lIW8YZA1N18/view?usp=sharing",
+      es: "https://drive.google.com/file/d/1SxUviSBDtH0trvKsRLd55lIW8YZA1N18/view?usp=sharing",
+      pt: "https://drive.google.com/file/d/1SxUviSBDtH0trvKsRLd55lIW8YZA1N18/view?usp=sharing",
+      tl: "https://drive.google.com/file/d/1SxUviSBDtH0trvKsRLd55lIW8YZA1N18/view?usp=sharing"
+    },
+    "2026-04-26": {
+      ko: "https://drive.google.com/file/d/1nwGvJwqpH3E3YJkIvpF5NMszZ_jSa9Bf/view?usp=sharing",
+      en: "https://drive.google.com/file/d/1nwGvJwqpH3E3YJkIvpF5NMszZ_jSa9Bf/view?usp=sharing",
+      zh: "https://drive.google.com/file/d/1nwGvJwqpH3E3YJkIvpF5NMszZ_jSa9Bf/view?usp=sharing",
+      es: "https://drive.google.com/file/d/1nwGvJwqpH3E3YJkIvpF5NMszZ_jSa9Bf/view?usp=sharing",
+      pt: "https://drive.google.com/file/d/1nwGvJwqpH3E3YJkIvpF5NMszZ_jSa9Bf/view?usp=sharing",
+      tl: "https://drive.google.com/file/d/1nwGvJwqpH3E3YJkIvpF5NMszZ_jSa9Bf/view?usp=sharing"
+    },
+    "2026-04-19": {
+      ko: "https://drive.google.com/file/d/10ILh011GwsACFab_nVIU_C1vsSBZciau/view?usp=sharing",
+      en: "https://drive.google.com/file/d/10ILh011GwsACFab_nVIU_C1vsSBZciau/view?usp=sharing",
+      zh: "https://drive.google.com/file/d/10ILh011GwsACFab_nVIU_C1vsSBZciau/view?usp=sharing",
+      es: "https://drive.google.com/file/d/10ILh011GwsACFab_nVIU_C1vsSBZciau/view?usp=sharing",
+      pt: "https://drive.google.com/file/d/10ILh011GwsACFab_nVIU_C1vsSBZciau/view?usp=sharing",
+      tl: "https://drive.google.com/file/d/10ILh011GwsACFab_nVIU_C1vsSBZciau/view?usp=sharing"
+    },
+    "2026-04-12": {
+      ko: "https://drive.google.com/file/d/1sU7AY_s8XdSmRVscukgsiT2zDxK2yYpS/view?usp=sharing",
+      en: "https://drive.google.com/file/d/1sU7AY_s8XdSmRVscukgsiT2zDxK2yYpS/view?usp=sharing",
+      zh: "https://drive.google.com/file/d/1sU7AY_s8XdSmRVscukgsiT2zDxK2yYpS/view?usp=sharing",
+      es: "https://drive.google.com/file/d/1sU7AY_s8XdSmRVscukgsiT2zDxK2yYpS/view?usp=sharing",
+      pt: "https://drive.google.com/file/d/1sU7AY_s8XdSmRVscukgsiT2zDxK2yYpS/view?usp=sharing",
+      tl: "https://drive.google.com/file/d/1sU7AY_s8XdSmRVscukgsiT2zDxK2yYpS/view?usp=sharing"
+    },
+    "2026-04-05": {
+      ko: "https://drive.google.com/file/d/1CB5mNsMfBqAz5-e_iX_2iyNnJdIMq8a8/view?usp=sharing",
+      en: "https://drive.google.com/file/d/1CB5mNsMfBqAz5-e_iX_2iyNnJdIMq8a8/view?usp=sharing",
+      zh: "https://drive.google.com/file/d/1CB5mNsMfBqAz5-e_iX_2iyNnJdIMq8a8/view?usp=sharing",
+      es: "https://drive.google.com/file/d/1CB5mNsMfBqAz5-e_iX_2iyNnJdIMq8a8/view?usp=sharing",
+      pt: "https://drive.google.com/file/d/1CB5mNsMfBqAz5-e_iX_2iyNnJdIMq8a8/view?usp=sharing",
+      tl: "https://drive.google.com/file/d/1CB5mNsMfBqAz5-e_iX_2iyNnJdIMq8a8/view?usp=sharing"
+    },
+    "2026-03-29": { ko: "#", en: "#", zh: "#", es: "#", pt: "#", tl: "#" },
+    "2026-03-22": { ko: "#", en: "#", zh: "#", es: "#", pt: "#", tl: "#" },
+    "2026-03-15": { ko: "#", en: "#", zh: "#", es: "#", pt: "#", tl: "#" },
+    "2026-03-08": { ko: "#", en: "#", zh: "#", es: "#", pt: "#", tl: "#" },
+    "2026-03-01": { ko: "#", en: "#", zh: "#", es: "#", pt: "#", tl: "#" }
+  },
   
   // 유튜브 관련 링크들
   youtubeLinks: {

@@ -102,6 +102,16 @@ const translations = {
     noticeAngelAccTitle: "엔젤트리 회계 보고",
     noticePagePlaceholder: "상세 내용은 추후 업데이트 예정입니다.",
 
+    // Meditation Page
+    meditationPageTitle: "묵상 자료",
+    meditationPageDesc: "최근 5주간의 묵상 자료를 확인하실 수 있습니다.",
+    meditationRecentTitle: "최근 5주치 묵상 자료",
+    meditationYearlyTitle: "묵상 자료 아카이브",
+    meditationDateSuffix: " 묵상",
+    archiveYear: "년도별",
+    archiveMonth: "월별",
+    archiveDate: "일자별",
+
     // Intro Page
     introPageTitle: "사역 소개",
     introPageDesc: "프리즌 리바이벌의 사역과 비전을 소개합니다.",
@@ -343,6 +353,16 @@ const translations = {
     noticeRevivalAccTitle: "Prison Revival Accounting Report",
     noticeAngelAccTitle: "Angel Tree Accounting Report",
     noticePagePlaceholder: "Detailed content will be updated later.",
+
+    // Meditation Page
+    meditationPageTitle: "Devotional Materials",
+    meditationPageDesc: "You can check the devotional materials from the last 5 weeks.",
+    meditationRecentTitle: "Last 5 Weeks of Devotionals",
+    meditationYearlyTitle: "Devotional Archive",
+    meditationDateSuffix: " Devotional",
+    archiveYear: "By Year",
+    archiveMonth: "By Month",
+    archiveDate: "By Date",
     prayerPoster: "images/prayer_poster_global.jpg",
 
     // Intro Page
