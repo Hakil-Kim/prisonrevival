@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prison Revival</title>
+  <title data-i18n="contactPageTitle">Prison Revival Manager Information</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -33,7 +33,7 @@
             <li><a href="intro.html#partners" data-i18n="navSubPartners">협력단체</a></li>
           </ul>
         </li>
-        <li><a href="#downloads" data-i18n="navDownload">묵상자료</a></li>
+        <li><a href="index.html#downloads" data-i18n="navDownload">묵상자료</a></li>
         <li class="dropdown">
           <a href="angeltree.html" class="dropdown-toggle">
             <span data-i18n="navAngelTree">엔젤트리</span>
@@ -124,133 +124,23 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <div class="hero-wrapper" id="home">
-
-    <h1 data-i18n="heroTitle" class="fade-in">새로운 희망을 만나다</h1>
-    <p data-i18n="heroDesc" class="fade-in delay-1">수감된 형제자매들에게 복음을 전하고 새롭게 되는 길을 함께 걸어갑니다.</p>
-
-    <!-- Video Player -->
-    <a href="javascript:void(0)" onclick="openVideoModal('oG_jy34D42M')" class="video-container fade-in delay-2" style="display: block; text-decoration: none; position: relative; transition: all 0.3s; cursor: pointer;">
-      <div class="video-wrapper">
-        <div class="video-thumb" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-          <img src="https://img.youtube.com/vi/oG_jy34D42M/hqdefault.jpg" alt="Prison Revival Video" style="object-fit: cover; width: 100%; height: 100%; transition: transform 0.6s;">
-          <!-- Make play icon always visible for the main video -->
-          <span class="play-icon" style="opacity: 1; font-size: 2.5rem; width: 80px; height: 80px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">▶</span>
-        </div>
-      </div>
-    </a>
-    
-    <!-- Volunteer Apply Button -->
-    <div class="hero-action fade-in delay-3">
-      <a href="http://pf.kakao.com/_ptYAG/chat" target="_blank" class="volunteer-btn" data-i18n="volunteerApply">프리즌 리바이벌 발렌티어 지원</a>
-    </div>
-  </div>
-
   <main>
-    <!-- Introduction Section -->
-    <section class="section" id="intro">
+    <section class="contact-hero">
       <div class="container">
-        <h2 class="section-title" data-i18n="introTitle">사역 및 선교사 소개</h2>
-        <div class="intro-grid">
-          <div class="missionary-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=800"
-              alt="Missionary" class="missionary-img">
-          </div>
-          <div class="intro-content">
-            <h3 data-i18n="missionaryName">김은미 선교사</h3>
-            <p data-i18n="missionaryDesc">프리즌 리바이벌은 담장 너머의 잃어버린 영혼들을 향한 하나님의 마음을 전합니다. 수감자들의 진정한 회복과 변화를 돕고, 사회의 건강한
-              일원으로 돌아올 수 있도록 돕는 사역입니다.</p>
-          </div>
-        </div>
-
-
-        <h3 data-i18n="partnersTitle" style="margin-top: 8rem;">협력 단체 및 교회</h3>
-        <div class="partners-grid">
-          <div class="partner-item">Partner Logo</div>
-          <div class="partner-item">Partner Logo</div>
-          <div class="partner-item">Partner Logo</div>
-          <div class="partner-item">Partner Logo</div>
-        </div>
+        <h1 data-i18n="contactPageTitle">담당자 안내</h1>
+        <p data-i18n="contactPageDesc">각 사역 및 후원 관련 담당자 안내입니다.</p>
       </div>
     </section>
 
-    <!-- Devotional Download Section -->
-    <section class="section section-dark" id="downloads">
-      <div class="container">
-        <h2 class="section-title" data-i18n="downloadTitle">이번 달 묵상 자료</h2>
-        <p class="section-desc" data-i18n="downloadDesc">아래 버튼을 눌러 선택하신 언어로 묵상 파일을 다운로드 할 수 있습니다.</p>
-        <div id="devotional-container" class="devotional-buttons"></div>
-        <a href="archive.html" class="secondary-btn" data-i18n="previousDevotionals">이전 달 묵상 자료 보기</a>
+    <section class="section container">
+      <div id="contact-grid" class="contact-grid">
+        <!-- Rendered by JS -->
+      </div>
+
+      <div style="margin-top: 6rem; text-align: center;">
+        <a href="index.html" class="secondary-btn" data-i18n="backToHome">홈으로 돌아가기</a>
       </div>
     </section>
-
-    <!-- Angel Tree Section -->
-    <section class="section" id="angeltree">
-      <div class="container">
-        <div class="section-badge">🎄 Hope for Children</div>
-        <h2 class="section-title" data-i18n="angelTreeTitle">엔젤트리 & 만나브릿지</h2>
-        <p class="section-desc" data-i18n="angelTreeDesc">수감자 자녀들을 위한 성탄 선물과 편지, 그리고 만남의 다리가 되어줍니다.</p>
-        <div class="angel-tree-visual">
-          <img src="https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&q=80&w=1000"
-            alt="Angel Tree" class="angel-tree-img">
-        </div>
-        <div class="angel-tree-cta">
-          <button class="youtube-btn" data-i18n="mannaBridge">만나브릿지 후원하기</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Programs Section -->
-    <section class="section section-dark" id="programs">
-      <div class="container">
-        <h2 class="section-title" data-i18n="programsTitle">사역 프로그램</h2>
-        <div class="programs-grid">
-          <div class="program-card">
-            <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&q=80&w=600"
-              alt="Inside Program">
-            <div class="program-content">
-              <h3 data-i18n="insideTitle">담장 안 프로그램</h3>
-              <p data-i18n="insideDesc">성경 공부, 수도원 프로젝트 등 내면의 변화를 돕습니다.</p>
-            </div>
-          </div>
-          <div class="program-card">
-            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=600"
-              alt="Volunteer Program">
-            <div class="program-content">
-              <h3 data-i18n="volunteerTitle">자원봉사 프로그램</h3>
-              <p data-i18n="volunteerDesc">중보기도, 노숙인 사역, 방문 성경 공부 등에 참여하세요.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Notice Section -->
-    <section class="section section-notice" id="notice">
-      <div class="container">
-        <div class="section-icon">📋</div>
-        <h2 class="section-title" data-i18n="noticeTitle">공지 및 보고</h2>
-        <div class="notice-board">
-          <div class="notice-item">
-            <div class="notice-left">
-              <span class="notice-dot"></span>
-              <span data-i18n="matchingStatus">주간 매칭 현황</span>
-            </div>
-            <span class="notice-tag">Updated</span>
-          </div>
-          <div class="notice-item">
-            <div class="notice-left">
-              <span class="notice-dot"></span>
-              <span data-i18n="accountingReport">회계 보고</span>
-            </div>
-            <span class="notice-tag tag-monthly">Monthly</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <footer>
@@ -259,7 +149,7 @@
         <img src="images/favicon.png" alt="PR Logo" class="footer-logo-img">
         <span class="footer-brand">Prison Revival</span>
       </div>
-      
+
       <div class="footer-info-grid">
         <!-- Left Column -->
         <div class="footer-col footer-links">
@@ -304,48 +194,66 @@
   <script src="js/data.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/app.js"></script>
-
-  <!-- Video Modal -->
-  <div id="videoModal" class="video-modal">
-    <div class="video-modal-content">
-      <span class="video-modal-close" onclick="closeVideoModal()">&times;</span>
-      <div class="video-wrapper">
-        <iframe id="modalVideoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
   <script>
-    function openVideoModal(videoId) {
-      const modal = document.getElementById('videoModal');
-      const iframe = document.getElementById('modalVideoFrame');
-      // Set the src with autoplay enabled
-      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&playsinline=1&rel=0`;
-      modal.style.display = 'flex';
-      
-      // Slight delay to allow display:flex to apply before adding active class for animation
-      setTimeout(() => {
-        modal.classList.add('active');
-      }, 10);
-    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('contact-grid');
+      const t = translations[currentLang] || translations['ko'];
 
-    function closeVideoModal() {
-      const modal = document.getElementById('videoModal');
-      const iframe = document.getElementById('modalVideoFrame');
-      modal.classList.remove('active');
-      
-      // Wait for transition to finish before hiding and clearing src
-      setTimeout(() => {
-        modal.style.display = 'none';
-        iframe.src = ''; // Clear src to stop video
-      }, 300);
-    }
+      appData.contactManagers.forEach(manager => {
+        const card = document.createElement('div');
+        card.className = 'contact-card';
 
-    // Close modal when clicking outside the video
-    document.getElementById('videoModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeVideoModal();
-      }
+        let html = `
+          <div class="contact-card-role">${manager.role}</div>
+          <div class="contact-card-name">${manager.name}</div>
+        `;
+
+        if (manager.org) {
+          html += `<div class="contact-card-org">${manager.org}</div>`;
+        }
+
+        html += `<div class="contact-card-info">`;
+
+        if (manager.kakao) {
+          html += `
+            <div class="contact-info-item">
+              <span class="contact-info-icon">💬</span>
+              <div class="contact-info-content">
+                <span class="contact-info-label">${t.contactKakao}</span>
+                <span class="contact-info-value">${manager.kakao}</span>
+              </div>
+            </div>
+          `;
+        }
+
+        if (manager.email) {
+          html += `
+            <div class="contact-info-item">
+              <span class="contact-info-icon">✉️</span>
+              <div class="contact-info-content">
+                <span class="contact-info-label">${t.contactEmail}</span>
+                <span class="contact-info-value">${manager.email}</span>
+              </div>
+            </div>
+          `;
+        }
+
+        if (manager.phone) {
+          html += `
+            <div class="contact-info-item">
+              <span class="contact-info-icon">📱</span>
+              <div class="contact-info-content">
+                <span class="contact-info-label">${t.contactPhone}</span>
+                <span class="contact-info-value">${manager.phone}</span>
+              </div>
+            </div>
+          `;
+        }
+
+        html += `</div>`;
+        card.innerHTML = html;
+        grid.appendChild(card);
+      });
     });
   </script>
 </body>

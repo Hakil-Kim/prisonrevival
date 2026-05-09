@@ -108,7 +108,18 @@
             <li><a href="youtube.html#angeltree" data-i18n="navSubYtAngelTree">엔젤트리 영상</a></li>
           </ul>
         </li>
-        <li><a href="index.html#notice" data-i18n="navNotice">공지</a></li>
+        <li class="dropdown">
+          <a href="index.html#notice" class="dropdown-toggle">
+            <span data-i18n="navNotice">공지/보고</span>
+            <i class="dropdown-icon"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="notice_matching.html" data-i18n="navSubMatching">매주 프리즌 매칭현황 보고</a></li>
+            <li><a href="notice_books.html" data-i18n="navSubBookSupport">매월 성경책 및 선교사님책 후원 보고</a></li>
+            <li><a href="notice_revival_acc.html" data-i18n="navSubRevivalAccounting">프리즌 리바이벌 회계 보고</a></li>
+            <li><a href="notice_angeltree_acc.html" data-i18n="navSubAngelAccounting">엔젤트리 회계 보고</a></li>
+          </ul>
+        </li>
         <li class="lang-selector-item">
           <div class="lang-selector">
             <select id="lang-select">
@@ -224,6 +235,10 @@
             <span class="footer-icon">👤</span>
             <span data-i18n="footerContactName">프리즌 리바이벌 &amp; 엔젤트리 오혁 대표</span>
           </div>
+          <a href="contact_managers.html" class="footer-contact-item footer-link">
+            <span class="footer-icon">📞</span>
+            <span data-i18n="footerContactInquiry">담당자 문의하기</span>
+          </a>
         </div>
       </div>
 

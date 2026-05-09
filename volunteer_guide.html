@@ -259,7 +259,18 @@
             <li><a href="youtube.html#angeltree" data-i18n="navSubYtAngelTree">엔젤트리 영상</a></li>
           </ul>
         </li>
-        <li><a href="index.html#notice" data-i18n="navNotice">공지</a></li>
+        <li class="dropdown">
+          <a href="index.html#notice" class="dropdown-toggle">
+            <span data-i18n="navNotice">공지/보고</span>
+            <i class="dropdown-icon"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="notice_matching.html" data-i18n="navSubMatching">매주 프리즌 매칭현황 보고</a></li>
+            <li><a href="notice_books.html" data-i18n="navSubBookSupport">매월 성경책 및 선교사님책 후원 보고</a></li>
+            <li><a href="notice_revival_acc.html" data-i18n="navSubRevivalAccounting">프리즌 리바이벌 회계 보고</a></li>
+            <li><a href="notice_angeltree_acc.html" data-i18n="navSubAngelAccounting">엔젤트리 회계 보고</a></li>
+          </ul>
+        </li>
         <li class="lang-selector-item">
           <div class="lang-selector">
             <select id="lang-select">
@@ -316,15 +327,13 @@
             <h4 data-i18n="volGuideVideoItem1">(1) 카카오톡 PC버전 설치방법</h4>
           </div>
         </div>
-        <!-- Item 2 -->
+        <!-- Item 2 (Mobile) -->
         <div class="video-card">
           <div class="video-thumb-placeholder">
             <div class="play-icon"></div>
           </div>
           <div class="video-info">
-            <h4 data-i18n="volGuideVideoItem2">(2) 인터넷우체국 회원가입 방법</h4>
-            <p data-i18n="volGuideVideoItem2_1">- 휴대폰(앱)에서 가입하는 방법</p>
-            <p data-i18n="volGuideVideoItem2_2">- PC에서 가입하는 방법</p>
+            <h4 data-i18n="volGuideVideoItem2">(2) 인터넷우체국 회원가입 방법 : 휴대폰(앱)</h4>
           </div>
         </div>
         <!-- Item 3 -->
@@ -333,7 +342,7 @@
             <div class="play-icon"></div>
           </div>
           <div class="video-info">
-            <h4 data-i18n="volGuideVideoItem3">(3) PC를 통해 인터넷 우체국을 통해 주소록 셋팅하는 방법</h4>
+            <h4 data-i18n="volGuideVideoItem2_PC">(3) 인터넷우체국 회원가입 방법 : PC</h4>
           </div>
         </div>
         <!-- Item 4 -->
@@ -342,18 +351,34 @@
             <div class="play-icon"></div>
           </div>
           <div class="video-info">
-            <h4 data-i18n="volGuideVideoItem4">(4) 법무부 온라인 민원서비스 대상자 등록방법</h4>
-            <p data-i18n="volGuideVideoItem4_1">- 휴대폰(앱)에서 등록하는 방법</p>
-            <p data-i18n="volGuideVideoItem4_2">- PC에서 등록하는 방법</p>
+            <h4 data-i18n="volGuideVideoItem3">(4) PC를 통해 인터넷 우체국을 통해 주소록 셋팅하는 방법</h4>
           </div>
         </div>
-        <!-- Item 5 -->
+        <!-- Item 5 (Mobile) -->
         <div class="video-card">
           <div class="video-thumb-placeholder">
             <div class="play-icon"></div>
           </div>
           <div class="video-info">
-            <h4 data-i18n="volGuideVideoItem5">(5) Q & A</h4>
+            <h4 data-i18n="volGuideVideoItem4">(5) 법무부 온라인 민원서비스 대상자 등록방법 : 휴대폰(앱)</h4>
+          </div>
+        </div>
+        <!-- Item 6 (PC) -->
+        <div class="video-card">
+          <div class="video-thumb-placeholder">
+            <div class="play-icon"></div>
+          </div>
+          <div class="video-info">
+            <h4 data-i18n="volGuideVideoItem4_PC">(6) 법무부 온라인 민원서비스 대상자 등록방법 : PC</h4>
+          </div>
+        </div>
+        <!-- Item 7 -->
+        <div class="video-card">
+          <div class="video-thumb-placeholder">
+            <div class="play-icon"></div>
+          </div>
+          <div class="video-info">
+            <h4 data-i18n="volGuideVideoItem5">(7) Q & A</h4>
           </div>
         </div>
       </div>
@@ -493,6 +518,10 @@
             <span class="footer-icon">👤</span>
             <span data-i18n="footerContactName">프리즌 리바이벌 &amp; 엔젤트리 오혁 대표</span>
           </div>
+          <a href="contact_managers.html" class="footer-contact-item footer-link">
+            <span class="footer-icon">📞</span>
+            <span data-i18n="footerContactInquiry">담당자 문의하기</span>
+          </a>
         </div>
       </div>
 

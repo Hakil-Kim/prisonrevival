@@ -16,6 +16,10 @@ const translations = {
     navSubYtInside: "담장안 은혜 영상",
     navSubYtAngelTree: "엔젤트리 영상",
     navNotice: "공지/보고",
+    navSubMatching: "매주 프리즌 매칭현황 보고",
+    navSubBookSupport: "매월 성경책 및 선교사님책 후원 보고",
+    navSubRevivalAccounting: "프리즌 리바이벌 회계 보고",
+    navSubAngelAccounting: "엔젤트리 회계 보고",
     navContact: "연락처",
     navSubPrayer: "중보기도 사역",
     navSubBible: "성경공부",
@@ -90,6 +94,13 @@ const translations = {
     contactInfo: "이메일: prisonrevival@gmail.com | 전화: 010-0000-0000",
     archiveTitle: "이전 묵상 자료 아카이브",
     backToHome: "홈으로 돌아가기",
+    
+    // Notice Pages
+    noticeMatchingTitle: "매주 프리즌 매칭현황 보고",
+    noticeBooksTitle: "매월 성경책 및 선교사님책 후원 보고",
+    noticeRevivalAccTitle: "프리즌 리바이벌 회계 보고",
+    noticeAngelAccTitle: "엔젤트리 회계 보고",
+    noticePagePlaceholder: "상세 내용은 추후 업데이트 예정입니다.",
 
     // Intro Page
     introPageTitle: "사역 소개",
@@ -186,6 +197,14 @@ const translations = {
     footerContactKakao: "카카오톡 : Prisonrevival",
     footerContactPhone: "휴대폰 : +82-10-5137-8822 (먼저 문자로 연락 부탁드립니다.)",
     footerContactName: "프리즌 리바이벌 & 엔젤트리 오혁 대표",
+    footerContactInquiry: "담당자 문의하기",
+
+    // Contact Managers Page
+    contactPageTitle: "프리즌 리바이벌 담당자 안내",
+    contactPageDesc: "각 사역 및 후원 관련 담당자 안내입니다.",
+    contactKakao: "카카오톡",
+    contactEmail: "이메일",
+    contactPhone: "휴대폰",
 
     // Volunteer Guide Page
     volGuideTitleMain: "발렌티어 안내",
@@ -196,14 +215,12 @@ const translations = {
     volGuideKakaoBtn: "지원하기 (카카오톡 상담)",
     volGuideVideoTitle: "프리즌 발렌티어 묵상발송 가이드",
     volGuideVideoItem1: "(1) 카카오톡 PC버전 설치방법",
-    volGuideVideoItem2: "(2) 인터넷우체국 회원가입 방법",
-    volGuideVideoItem2_1: "- 휴대폰(앱)에서 가입하는 방법",
-    volGuideVideoItem2_2: "- PC에서 가입하는 방법",
-    volGuideVideoItem3: "(3) PC를 통해 인터넷 우체국을 통해 주소록 셋팅하는 방법",
-    volGuideVideoItem4: "(4) 법무부 온라인 민원서비스 대상자 등록방법",
-    volGuideVideoItem4_1: "- 휴대폰(앱)에서 등록하는 방법",
-    volGuideVideoItem4_2: "- PC에서 등록하는 방법",
-    volGuideVideoItem5: "(5) Q & A",
+    volGuideVideoItem2: "(2) 인터넷우체국 회원가입 방법 : 휴대폰(앱)",
+    volGuideVideoItem2_PC: "(3) 인터넷우체국 회원가입 방법 : PC",
+    volGuideVideoItem3: "(4) PC를 통해 인터넷 우체국을 통해 주소록 셋팅하는 방법",
+    volGuideVideoItem4: "(5) 법무부 온라인 민원서비스 대상자 등록방법 : 휴대폰(앱)",
+    volGuideVideoItem4_PC: "(6) 법무부 온라인 민원서비스 대상자 등록방법 : PC",
+    volGuideVideoItem5: "(7) Q & A",
     volGuideChatTitle: "프리즌 리바이벌 단톡방",
     volGuideChatBtn1: "프리즌 리바이벌 메인공지방",
     volGuideChatBtn2: "프리즌 리바이벌 중보기도방",
@@ -238,7 +255,11 @@ const translations = {
     navSubYtMeditation: "Missionary Meditation",
     navSubYtInside: "Grace from Inside",
     navSubYtAngelTree: "Angel Tree Videos",
-    navNotice: "Notice",
+    navNotice: "Notice/Report",
+    navSubMatching: "Weekly Prison Matching Status",
+    navSubBookSupport: "Monthly Bible & Book Support",
+    navSubRevivalAccounting: "Prison Revival Accounting",
+    navSubAngelAccounting: "Angel Tree Accounting",
     navContact: "Contact",
     navSubAngelIntro: "About Angel Tree",
     navSubChristmas: "Christmas Angel Tree",
@@ -315,6 +336,13 @@ const translations = {
     contactInfo: "Email: prisonrevival@gmail.com | Phone: 010-0000-0000",
     archiveTitle: "Previous Devotionals Archive",
     backToHome: "Back to Home",
+    
+    // Notice Pages
+    noticeMatchingTitle: "Weekly Prison Matching Status Report",
+    noticeBooksTitle: "Monthly Bible & Missionary Book Support Report",
+    noticeRevivalAccTitle: "Prison Revival Accounting Report",
+    noticeAngelAccTitle: "Angel Tree Accounting Report",
+    noticePagePlaceholder: "Detailed content will be updated later.",
     prayerPoster: "images/prayer_poster_global.jpg",
 
     // Intro Page
@@ -412,6 +440,14 @@ const translations = {
     footerContactKakao: "KakaoTalk: Prisonrevival",
     footerContactPhone: "Mobile: +82-10-5137-8822 (Please contact via text first)",
     footerContactName: "Prison Revival & Angel Tree CEO Oh Hyuk",
+    footerContactInquiry: "Contact Manager Inquiry",
+
+    // Contact Managers Page
+    contactPageTitle: "Prison Revival Manager Information",
+    contactPageDesc: "Information for each ministry and support manager.",
+    contactKakao: "KakaoTalk",
+    contactEmail: "Email",
+    contactPhone: "Mobile",
 
     // Volunteer Guide Page
     volGuideTitleMain: "Volunteer Guide",
@@ -422,14 +458,12 @@ const translations = {
     volGuideKakaoBtn: "Apply (KakaoTalk Consultation)",
     volGuideVideoTitle: "Prison Volunteer Mailing Guide",
     volGuideVideoItem1: "(1) How to install KakaoTalk PC version",
-    volGuideVideoItem2: "(2) How to sign up for Internet Post Office",
-    volGuideVideoItem2_1: "- How to sign up on mobile (app)",
-    volGuideVideoItem2_2: "- How to sign up on PC",
-    volGuideVideoItem3: "(3) How to set up an address book through Internet Post Office via PC",
-    volGuideVideoItem4: "(4) How to register as a target for the Ministry of Justice online civil service",
-    volGuideVideoItem4_1: "- How to register on mobile (app)",
-    volGuideVideoItem4_2: "- How to register on PC",
-    volGuideVideoItem5: "(5) Q & A",
+    volGuideVideoItem2: "(2) How to sign up for Internet Post Office: Mobile (App)",
+    volGuideVideoItem2_PC: "(3) How to sign up for Internet Post Office: PC",
+    volGuideVideoItem3: "(4) How to set up an address book through Internet Post Office via PC",
+    volGuideVideoItem4: "(5) How to register as a target for the Ministry of Justice online civil service: Mobile (App)",
+    volGuideVideoItem4_PC: "(6) How to register as a target for the Ministry of Justice online civil service: PC",
+    volGuideVideoItem5: "(7) Q & A",
     volGuideChatTitle: "Prison Revival Group Chat Room",
     volGuideChatBtn1: "Prison Revival Main Notice Room",
     volGuideChatBtn2: "Prison Revival Intercessory Prayer Room",
